@@ -29,284 +29,302 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.személyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.újToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.módósítToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.törlésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cégToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.újToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.módósításToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.törlésToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.címToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.újToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.módósításToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.törlésToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl_Semely = new System.Windows.Forms.TabControl();
+            this.tabPage_szemely = new System.Windows.Forms.TabPage();
             this.Ügyfelek = new System.Windows.Forms.ListBox();
-            this.groupBox_kivUgyfelek = new System.Windows.Forms.GroupBox();
-            this.ugyfel_nev = new System.Windows.Forms.Label();
-            this.textBox_nev = new System.Windows.Forms.TextBox();
-            this.ugyfel_email = new System.Windows.Forms.Label();
-            this.textBox_email = new System.Windows.Forms.TextBox();
-            this.label_jelszo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_telefonsz = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label_szemelyisz = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label_szulDatum = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox_kivUgyfelek.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonTorles = new System.Windows.Forms.Button();
+            this.button_modosit = new System.Windows.Forms.Button();
+            this.buttonList = new System.Windows.Forms.Button();
+            this.buttonÚj = new System.Windows.Forms.Button();
+            this.dateTimePicker_szul = new System.Windows.Forms.DateTimePicker();
+            this.label_szulDate = new System.Windows.Forms.Label();
+            this.textBox_szemSzam = new System.Windows.Forms.TextBox();
+            this.label_szemSzam = new System.Windows.Forms.Label();
+            this.textBox_Telefonsz = new System.Windows.Forms.TextBox();
+            this.label_Telefon = new System.Windows.Forms.Label();
+            this.textBox_Jelszo = new System.Windows.Forms.TextBox();
+            this.label_Jelszo = new System.Windows.Forms.Label();
+            this.textBox_Email = new System.Windows.Forms.TextBox();
+            this.label_Email = new System.Windows.Forms.Label();
+            this.textBox_Nev = new System.Windows.Forms.TextBox();
+            this.label_Nev = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage_cim = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tabControl_Semely.SuspendLayout();
+            this.tabPage_szemely.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // tabControl_Semely
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.személyToolStripMenuItem,
-            this.cégToolStripMenuItem,
-            this.címToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(966, 34);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tabControl_Semely.Controls.Add(this.tabPage_szemely);
+            this.tabControl_Semely.Controls.Add(this.tabPage2);
+            this.tabControl_Semely.Controls.Add(this.tabPage_cim);
+            this.tabControl_Semely.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControl_Semely.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl_Semely.Name = "tabControl_Semely";
+            this.tabControl_Semely.SelectedIndex = 0;
+            this.tabControl_Semely.Size = new System.Drawing.Size(968, 537);
+            this.tabControl_Semely.TabIndex = 0;
             // 
-            // személyToolStripMenuItem
+            // tabPage_szemely
             // 
-            this.személyToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.személyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.újToolStripMenuItem,
-            this.módósítToolStripMenuItem,
-            this.törlésToolStripMenuItem});
-            this.személyToolStripMenuItem.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.személyToolStripMenuItem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.személyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.SteelBlue;
-            this.személyToolStripMenuItem.Name = "személyToolStripMenuItem";
-            this.személyToolStripMenuItem.Size = new System.Drawing.Size(76, 30);
-            this.személyToolStripMenuItem.Text = "Személy";
-            // 
-            // újToolStripMenuItem
-            // 
-            this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.újToolStripMenuItem.Text = "Új";
-            // 
-            // módósítToolStripMenuItem
-            // 
-            this.módósítToolStripMenuItem.Name = "módósítToolStripMenuItem";
-            this.módósítToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.módósítToolStripMenuItem.Text = "Módósítás";
-            // 
-            // törlésToolStripMenuItem
-            // 
-            this.törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
-            this.törlésToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.törlésToolStripMenuItem.Text = "Törlés";
-            // 
-            // cégToolStripMenuItem
-            // 
-            this.cégToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.cégToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.újToolStripMenuItem1,
-            this.módósításToolStripMenuItem,
-            this.törlésToolStripMenuItem1});
-            this.cégToolStripMenuItem.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cégToolStripMenuItem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cégToolStripMenuItem.Name = "cégToolStripMenuItem";
-            this.cégToolStripMenuItem.Size = new System.Drawing.Size(49, 30);
-            this.cégToolStripMenuItem.Text = "Cég";
-            this.cégToolStripMenuItem.Click += new System.EventHandler(this.cégToolStripMenuItem_Click);
-            // 
-            // újToolStripMenuItem1
-            // 
-            this.újToolStripMenuItem1.Name = "újToolStripMenuItem1";
-            this.újToolStripMenuItem1.Size = new System.Drawing.Size(224, 30);
-            this.újToolStripMenuItem1.Text = "Új";
-            // 
-            // módósításToolStripMenuItem
-            // 
-            this.módósításToolStripMenuItem.Name = "módósításToolStripMenuItem";
-            this.módósításToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
-            this.módósításToolStripMenuItem.Text = "Módósítás";
-            // 
-            // törlésToolStripMenuItem1
-            // 
-            this.törlésToolStripMenuItem1.Name = "törlésToolStripMenuItem1";
-            this.törlésToolStripMenuItem1.Size = new System.Drawing.Size(224, 30);
-            this.törlésToolStripMenuItem1.Text = "Törlés";
-            // 
-            // címToolStripMenuItem
-            // 
-            this.címToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.újToolStripMenuItem2,
-            this.módósításToolStripMenuItem1,
-            this.törlésToolStripMenuItem2});
-            this.címToolStripMenuItem.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.címToolStripMenuItem.ForeColor = System.Drawing.Color.SteelBlue;
-            this.címToolStripMenuItem.Name = "címToolStripMenuItem";
-            this.címToolStripMenuItem.Size = new System.Drawing.Size(49, 30);
-            this.címToolStripMenuItem.Text = "Cím";
-            // 
-            // újToolStripMenuItem2
-            // 
-            this.újToolStripMenuItem2.Name = "újToolStripMenuItem2";
-            this.újToolStripMenuItem2.Size = new System.Drawing.Size(224, 30);
-            this.újToolStripMenuItem2.Text = "Új";
-            // 
-            // módósításToolStripMenuItem1
-            // 
-            this.módósításToolStripMenuItem1.Name = "módósításToolStripMenuItem1";
-            this.módósításToolStripMenuItem1.Size = new System.Drawing.Size(224, 30);
-            this.módósításToolStripMenuItem1.Text = "Módósítás";
-            // 
-            // törlésToolStripMenuItem2
-            // 
-            this.törlésToolStripMenuItem2.Name = "törlésToolStripMenuItem2";
-            this.törlésToolStripMenuItem2.Size = new System.Drawing.Size(224, 30);
-            this.törlésToolStripMenuItem2.Text = "Törlés";
+            this.tabPage_szemely.BackColor = System.Drawing.Color.Black;
+            this.tabPage_szemely.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage_szemely.BackgroundImage")));
+            this.tabPage_szemely.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage_szemely.Controls.Add(this.Ügyfelek);
+            this.tabPage_szemely.Controls.Add(this.groupBox1);
+            this.tabPage_szemely.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabPage_szemely.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tabPage_szemely.Location = new System.Drawing.Point(4, 35);
+            this.tabPage_szemely.Name = "tabPage_szemely";
+            this.tabPage_szemely.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_szemely.Size = new System.Drawing.Size(960, 498);
+            this.tabPage_szemely.TabIndex = 0;
+            this.tabPage_szemely.Text = "Személy";
             // 
             // Ügyfelek
             // 
             this.Ügyfelek.BackColor = System.Drawing.Color.SteelBlue;
-            this.Ügyfelek.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ügyfelek.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Ügyfelek.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Ügyfelek.ForeColor = System.Drawing.Color.Black;
+            this.Ügyfelek.ForeColor = System.Drawing.Color.White;
             this.Ügyfelek.FormattingEnabled = true;
-            this.Ügyfelek.ItemHeight = 35;
-            this.Ügyfelek.Location = new System.Drawing.Point(653, 34);
+            this.Ügyfelek.ItemHeight = 26;
+            this.Ügyfelek.Location = new System.Drawing.Point(632, 33);
             this.Ügyfelek.Name = "Ügyfelek";
-            this.Ügyfelek.Size = new System.Drawing.Size(313, 502);
+            this.Ügyfelek.Size = new System.Drawing.Size(263, 420);
             this.Ügyfelek.TabIndex = 1;
             // 
-            // groupBox_kivUgyfelek
+            // groupBox1
             // 
-            this.groupBox_kivUgyfelek.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox_kivUgyfelek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBox_kivUgyfelek.Controls.Add(this.label_szulDatum);
-            this.groupBox_kivUgyfelek.Controls.Add(this.dateTimePicker1);
-            this.groupBox_kivUgyfelek.Controls.Add(this.textBox3);
-            this.groupBox_kivUgyfelek.Controls.Add(this.label_szemelyisz);
-            this.groupBox_kivUgyfelek.Controls.Add(this.textBox2);
-            this.groupBox_kivUgyfelek.Controls.Add(this.label_telefonsz);
-            this.groupBox_kivUgyfelek.Controls.Add(this.textBox1);
-            this.groupBox_kivUgyfelek.Controls.Add(this.label_jelszo);
-            this.groupBox_kivUgyfelek.Controls.Add(this.textBox_email);
-            this.groupBox_kivUgyfelek.Controls.Add(this.ugyfel_email);
-            this.groupBox_kivUgyfelek.Controls.Add(this.textBox_nev);
-            this.groupBox_kivUgyfelek.Controls.Add(this.ugyfel_nev);
-            this.groupBox_kivUgyfelek.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox_kivUgyfelek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox_kivUgyfelek.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox_kivUgyfelek.ForeColor = System.Drawing.Color.White;
-            this.groupBox_kivUgyfelek.Location = new System.Drawing.Point(0, 34);
-            this.groupBox_kivUgyfelek.Name = "groupBox_kivUgyfelek";
-            this.groupBox_kivUgyfelek.Size = new System.Drawing.Size(654, 502);
-            this.groupBox_kivUgyfelek.TabIndex = 2;
-            this.groupBox_kivUgyfelek.TabStop = false;
-            this.groupBox_kivUgyfelek.Text = "Kiválasztott Ügyfél";
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.buttonTorles);
+            this.groupBox1.Controls.Add(this.button_modosit);
+            this.groupBox1.Controls.Add(this.buttonList);
+            this.groupBox1.Controls.Add(this.buttonÚj);
+            this.groupBox1.Controls.Add(this.dateTimePicker_szul);
+            this.groupBox1.Controls.Add(this.label_szulDate);
+            this.groupBox1.Controls.Add(this.textBox_szemSzam);
+            this.groupBox1.Controls.Add(this.label_szemSzam);
+            this.groupBox1.Controls.Add(this.textBox_Telefonsz);
+            this.groupBox1.Controls.Add(this.label_Telefon);
+            this.groupBox1.Controls.Add(this.textBox_Jelszo);
+            this.groupBox1.Controls.Add(this.label_Jelszo);
+            this.groupBox1.Controls.Add(this.textBox_Email);
+            this.groupBox1.Controls.Add(this.label_Email);
+            this.groupBox1.Controls.Add(this.textBox_Nev);
+            this.groupBox1.Controls.Add(this.label_Nev);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(37, 20);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(589, 444);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kiválasztott Ügyfél";
             // 
-            // ugyfel_nev
+            // buttonTorles
             // 
-            this.ugyfel_nev.AutoSize = true;
-            this.ugyfel_nev.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ugyfel_nev.Location = new System.Drawing.Point(34, 48);
-            this.ugyfel_nev.Name = "ugyfel_nev";
-            this.ugyfel_nev.Size = new System.Drawing.Size(43, 35);
-            this.ugyfel_nev.TabIndex = 0;
-            this.ugyfel_nev.Text = "Név";
-            this.ugyfel_nev.Click += new System.EventHandler(this.label1_Click);
+            this.buttonTorles.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonTorles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonTorles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTorles.ForeColor = System.Drawing.Color.White;
+            this.buttonTorles.Location = new System.Drawing.Point(441, 381);
+            this.buttonTorles.Name = "buttonTorles";
+            this.buttonTorles.Size = new System.Drawing.Size(105, 32);
+            this.buttonTorles.TabIndex = 15;
+            this.buttonTorles.Text = "Törlés";
+            this.buttonTorles.UseVisualStyleBackColor = false;
             // 
-            // textBox_nev
+            // button_modosit
             // 
-            this.textBox_nev.Location = new System.Drawing.Point(171, 48);
-            this.textBox_nev.Name = "textBox_nev";
-            this.textBox_nev.Size = new System.Drawing.Size(171, 37);
-            this.textBox_nev.TabIndex = 1;
+            this.button_modosit.BackColor = System.Drawing.Color.SteelBlue;
+            this.button_modosit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_modosit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_modosit.ForeColor = System.Drawing.Color.White;
+            this.button_modosit.Location = new System.Drawing.Point(306, 381);
+            this.button_modosit.Name = "button_modosit";
+            this.button_modosit.Size = new System.Drawing.Size(105, 32);
+            this.button_modosit.TabIndex = 14;
+            this.button_modosit.Text = "Módosít";
+            this.button_modosit.UseVisualStyleBackColor = false;
             // 
-            // ugyfel_email
+            // buttonList
             // 
-            this.ugyfel_email.AutoSize = true;
-            this.ugyfel_email.Location = new System.Drawing.Point(35, 125);
-            this.ugyfel_email.Name = "ugyfel_email";
-            this.ugyfel_email.Size = new System.Drawing.Size(59, 35);
-            this.ugyfel_email.TabIndex = 2;
-            this.ugyfel_email.Text = "Email";
+            this.buttonList.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonList.ForeColor = System.Drawing.Color.White;
+            this.buttonList.Location = new System.Drawing.Point(171, 381);
+            this.buttonList.Name = "buttonList";
+            this.buttonList.Size = new System.Drawing.Size(105, 32);
+            this.buttonList.TabIndex = 13;
+            this.buttonList.Text = "Listáz";
+            this.buttonList.UseVisualStyleBackColor = false;
             // 
-            // textBox_email
+            // buttonÚj
             // 
-            this.textBox_email.Location = new System.Drawing.Point(171, 119);
-            this.textBox_email.Name = "textBox_email";
-            this.textBox_email.Size = new System.Drawing.Size(171, 37);
-            this.textBox_email.TabIndex = 3;
+            this.buttonÚj.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonÚj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonÚj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonÚj.ForeColor = System.Drawing.Color.White;
+            this.buttonÚj.Location = new System.Drawing.Point(36, 381);
+            this.buttonÚj.Name = "buttonÚj";
+            this.buttonÚj.Size = new System.Drawing.Size(105, 32);
+            this.buttonÚj.TabIndex = 12;
+            this.buttonÚj.Text = "Új";
+            this.buttonÚj.UseVisualStyleBackColor = false;
+            this.buttonÚj.Click += new System.EventHandler(this.buttonÚj_Click);
             // 
-            // label_jelszo
+            // dateTimePicker_szul
             // 
-            this.label_jelszo.AutoSize = true;
-            this.label_jelszo.Location = new System.Drawing.Point(35, 195);
-            this.label_jelszo.Name = "label_jelszo";
-            this.label_jelszo.Size = new System.Drawing.Size(62, 35);
-            this.label_jelszo.TabIndex = 4;
-            this.label_jelszo.Text = "Jelszó";
+            this.dateTimePicker_szul.Checked = false;
+            this.dateTimePicker_szul.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_szul.Location = new System.Drawing.Point(331, 231);
+            this.dateTimePicker_szul.Name = "dateTimePicker_szul";
+            this.dateTimePicker_szul.ShowCheckBox = true;
+            this.dateTimePicker_szul.Size = new System.Drawing.Size(204, 30);
+            this.dateTimePicker_szul.TabIndex = 11;
             // 
-            // textBox1
+            // label_szulDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 37);
-            this.textBox1.TabIndex = 5;
+            this.label_szulDate.AutoSize = true;
+            this.label_szulDate.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_szulDate.ForeColor = System.Drawing.Color.White;
+            this.label_szulDate.Location = new System.Drawing.Point(325, 170);
+            this.label_szulDate.Name = "label_szulDate";
+            this.label_szulDate.Size = new System.Drawing.Size(125, 31);
+            this.label_szulDate.TabIndex = 10;
+            this.label_szulDate.Text = "Szüleési dátum";
             // 
-            // label_telefonsz
+            // textBox_szemSzam
             // 
-            this.label_telefonsz.AutoSize = true;
-            this.label_telefonsz.Location = new System.Drawing.Point(35, 276);
-            this.label_telefonsz.Name = "label_telefonsz";
-            this.label_telefonsz.Size = new System.Drawing.Size(114, 35);
-            this.label_telefonsz.TabIndex = 6;
-            this.label_telefonsz.Text = "Telefonszám";
+            this.textBox_szemSzam.Location = new System.Drawing.Point(328, 99);
+            this.textBox_szemSzam.Name = "textBox_szemSzam";
+            this.textBox_szemSzam.Size = new System.Drawing.Size(207, 30);
+            this.textBox_szemSzam.TabIndex = 9;
             // 
-            // textBox2
+            // label_szemSzam
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 272);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 37);
-            this.textBox2.TabIndex = 7;
+            this.label_szemSzam.AutoSize = true;
+            this.label_szemSzam.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_szemSzam.ForeColor = System.Drawing.Color.White;
+            this.label_szemSzam.Location = new System.Drawing.Point(314, 39);
+            this.label_szemSzam.Name = "label_szemSzam";
+            this.label_szemSzam.Size = new System.Drawing.Size(121, 31);
+            this.label_szemSzam.TabIndex = 8;
+            this.label_szemSzam.Text = "Személyi szám";
             // 
-            // label_szemelyisz
+            // textBox_Telefonsz
             // 
-            this.label_szemelyisz.AutoSize = true;
-            this.label_szemelyisz.Location = new System.Drawing.Point(35, 371);
-            this.label_szemelyisz.Name = "label_szemelyisz";
-            this.label_szemelyisz.Size = new System.Drawing.Size(131, 35);
-            this.label_szemelyisz.TabIndex = 8;
-            this.label_szemelyisz.Text = "Személyi szám";
+            this.textBox_Telefonsz.Location = new System.Drawing.Point(82, 278);
+            this.textBox_Telefonsz.Name = "textBox_Telefonsz";
+            this.textBox_Telefonsz.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Telefonsz.TabIndex = 7;
             // 
-            // textBox3
+            // label_Telefon
             // 
-            this.textBox3.Location = new System.Drawing.Point(171, 368);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 37);
-            this.textBox3.TabIndex = 9;
+            this.label_Telefon.AutoSize = true;
+            this.label_Telefon.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Telefon.ForeColor = System.Drawing.Color.White;
+            this.label_Telefon.Location = new System.Drawing.Point(17, 231);
+            this.label_Telefon.Name = "label_Telefon";
+            this.label_Telefon.Size = new System.Drawing.Size(105, 31);
+            this.label_Telefon.TabIndex = 6;
+            this.label_Telefon.Text = "Telefonszám";
             // 
-            // dateTimePicker1
+            // textBox_Jelszo
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(400, 119);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(206, 37);
-            this.dateTimePicker1.TabIndex = 10;
+            this.textBox_Jelszo.Location = new System.Drawing.Point(82, 173);
+            this.textBox_Jelszo.Name = "textBox_Jelszo";
+            this.textBox_Jelszo.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Jelszo.TabIndex = 5;
             // 
-            // label_szulDatum
+            // label_Jelszo
             // 
-            this.label_szulDatum.AutoSize = true;
-            this.label_szulDatum.Location = new System.Drawing.Point(408, 48);
-            this.label_szulDatum.Name = "label_szulDatum";
-            this.label_szulDatum.Size = new System.Drawing.Size(143, 35);
-            this.label_szulDatum.TabIndex = 11;
-            this.label_szulDatum.Text = "Születési dátum";
+            this.label_Jelszo.AutoSize = true;
+            this.label_Jelszo.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Jelszo.ForeColor = System.Drawing.Color.White;
+            this.label_Jelszo.Location = new System.Drawing.Point(17, 167);
+            this.label_Jelszo.Name = "label_Jelszo";
+            this.label_Jelszo.Size = new System.Drawing.Size(57, 31);
+            this.label_Jelszo.TabIndex = 4;
+            this.label_Jelszo.Text = "Jelszó";
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(82, 100);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Email.TabIndex = 3;
+            // 
+            // label_Email
+            // 
+            this.label_Email.AutoSize = true;
+            this.label_Email.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Email.ForeColor = System.Drawing.Color.White;
+            this.label_Email.Location = new System.Drawing.Point(14, 103);
+            this.label_Email.Name = "label_Email";
+            this.label_Email.Size = new System.Drawing.Size(55, 31);
+            this.label_Email.TabIndex = 2;
+            this.label_Email.Text = "Email";
+            // 
+            // textBox_Nev
+            // 
+            this.textBox_Nev.Location = new System.Drawing.Point(82, 39);
+            this.textBox_Nev.Name = "textBox_Nev";
+            this.textBox_Nev.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Nev.TabIndex = 1;
+            // 
+            // label_Nev
+            // 
+            this.label_Nev.AutoSize = true;
+            this.label_Nev.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_Nev.ForeColor = System.Drawing.Color.White;
+            this.label_Nev.Location = new System.Drawing.Point(17, 39);
+            this.label_Nev.Name = "label_Nev";
+            this.label_Nev.Size = new System.Drawing.Size(40, 31);
+            this.label_Nev.TabIndex = 0;
+            this.label_Nev.Text = "Név";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(960, 498);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Cég";
+            // 
+            // tabPage_cim
+            // 
+            this.tabPage_cim.BackColor = System.Drawing.Color.Black;
+            this.tabPage_cim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage_cim.BackgroundImage")));
+            this.tabPage_cim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage_cim.Location = new System.Drawing.Point(4, 35);
+            this.tabPage_cim.Name = "tabPage_cim";
+            this.tabPage_cim.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_cim.Size = new System.Drawing.Size(960, 498);
+            this.tabPage_cim.TabIndex = 2;
+            this.tabPage_cim.Text = "Cím";
+            this.tabPage_cim.Click += new System.EventHandler(this.tabPage_cim_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 26;
+            this.listBox1.Location = new System.Drawing.Point(723, 22);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(213, 394);
+            this.listBox1.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -314,50 +332,44 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(966, 536);
-            this.Controls.Add(this.groupBox_kivUgyfelek);
-            this.Controls.Add(this.Ügyfelek);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.tabControl_Semely);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "FormMain";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox_kivUgyfelek.ResumeLayout(false);
-            this.groupBox_kivUgyfelek.PerformLayout();
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.tabControl_Semely.ResumeLayout(false);
+            this.tabPage_szemely.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem személyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem módósítToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem törlésToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cégToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem módósításToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem törlésToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem címToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem módósításToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem törlésToolStripMenuItem2;
+        private System.Windows.Forms.TabControl tabControl_Semely;
+        private System.Windows.Forms.TabPage tabPage_szemely;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage_cim;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox_Nev;
+        private System.Windows.Forms.Label label_Nev;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_szul;
+        private System.Windows.Forms.Label label_szulDate;
+        private System.Windows.Forms.TextBox textBox_szemSzam;
+        private System.Windows.Forms.Label label_szemSzam;
+        private System.Windows.Forms.TextBox textBox_Telefonsz;
+        private System.Windows.Forms.Label label_Telefon;
+        private System.Windows.Forms.TextBox textBox_Jelszo;
+        private System.Windows.Forms.Label label_Jelszo;
+        private System.Windows.Forms.TextBox textBox_Email;
+        private System.Windows.Forms.Label label_Email;
         private System.Windows.Forms.ListBox Ügyfelek;
-        private System.Windows.Forms.GroupBox groupBox_kivUgyfelek;
-        private System.Windows.Forms.TextBox textBox_nev;
-        private System.Windows.Forms.Label ugyfel_nev;
-        private System.Windows.Forms.TextBox textBox_email;
-        private System.Windows.Forms.Label ugyfel_email;
-        private System.Windows.Forms.Label label_jelszo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label_telefonsz;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label_szemelyisz;
-        private System.Windows.Forms.Label label_szulDatum;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button buttonÚj;
+        private System.Windows.Forms.Button buttonList;
+        private System.Windows.Forms.Button buttonTorles;
+        private System.Windows.Forms.Button button_modosit;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
