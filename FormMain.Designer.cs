@@ -46,14 +46,13 @@
             this.label_Nev = new System.Windows.Forms.Label();
             this.tabPage_ceg = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox_Ceg = new System.Windows.Forms.CheckBox();
             this.textBox_bankszamlaszam = new System.Windows.Forms.TextBox();
             this.label_bankszamlaszam = new System.Windows.Forms.Label();
             this.textBox_adoszam = new System.Windows.Forms.TextBox();
             this.label_adoszam = new System.Windows.Forms.Label();
             this.textBox_cegtipus = new System.Windows.Forms.TextBox();
             this.label_cegtipus = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_CegNev = new System.Windows.Forms.TextBox();
             this.label_Cégnev = new System.Windows.Forms.Label();
             this.tabPage_cim = new System.Windows.Forms.TabPage();
             this.buttonTorles = new System.Windows.Forms.Button();
@@ -82,6 +81,7 @@
             this.textBox_Orszag = new System.Windows.Forms.TextBox();
             this.label_Orszag = new System.Windows.Forms.Label();
             this.Ügyfelek = new System.Windows.Forms.ListBox();
+            this.checkBox_Ceg = new System.Windows.Forms.CheckBox();
             this.tabControl_Ossz.SuspendLayout();
             this.tabPage_szemely.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,6 +123,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.checkBox_Ceg);
             this.groupBox1.Controls.Add(this.dateTimePicker_szul);
             this.groupBox1.Controls.Add(this.label_szulDate);
             this.groupBox1.Controls.Add(this.textBox_szemSzam);
@@ -274,14 +275,13 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBox2.Controls.Add(this.checkBox_Ceg);
             this.groupBox2.Controls.Add(this.textBox_bankszamlaszam);
             this.groupBox2.Controls.Add(this.label_bankszamlaszam);
             this.groupBox2.Controls.Add(this.textBox_adoszam);
             this.groupBox2.Controls.Add(this.label_adoszam);
             this.groupBox2.Controls.Add(this.textBox_cegtipus);
             this.groupBox2.Controls.Add(this.label_cegtipus);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textBox_CegNev);
             this.groupBox2.Controls.Add(this.label_Cégnev);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -291,16 +291,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kiválasztott Ügyfél";
-            // 
-            // checkBox_Ceg
-            // 
-            this.checkBox_Ceg.AutoSize = true;
-            this.checkBox_Ceg.Location = new System.Drawing.Point(106, 42);
-            this.checkBox_Ceg.Name = "checkBox_Ceg";
-            this.checkBox_Ceg.Size = new System.Drawing.Size(56, 30);
-            this.checkBox_Ceg.TabIndex = 10;
-            this.checkBox_Ceg.Text = "cég";
-            this.checkBox_Ceg.UseVisualStyleBackColor = true;
             // 
             // textBox_bankszamlaszam
             // 
@@ -356,12 +346,13 @@
             this.label_cegtipus.TabIndex = 4;
             this.label_cegtipus.Text = "Cég tipus";
             // 
-            // textBox4
+            // textBox_CegNev
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 30);
-            this.textBox4.TabIndex = 3;
+            this.textBox_CegNev.Location = new System.Drawing.Point(106, 105);
+            this.textBox_CegNev.Name = "textBox_CegNev";
+            this.textBox_CegNev.Size = new System.Drawing.Size(207, 30);
+            this.textBox_CegNev.TabIndex = 3;
+            this.textBox_CegNev.Visible = false;
             // 
             // label_Cégnev
             // 
@@ -443,6 +434,7 @@
             this.buttonÚj.TabIndex = 16;
             this.buttonÚj.Text = "Új";
             this.buttonÚj.UseVisualStyleBackColor = false;
+            this.buttonÚj.Click += new System.EventHandler(this.buttonÚj_Click);
             // 
             // groupBox3
             // 
@@ -659,6 +651,16 @@
             this.Ügyfelek.Size = new System.Drawing.Size(271, 420);
             this.Ügyfelek.TabIndex = 2;
             // 
+            // checkBox_Ceg
+            // 
+            this.checkBox_Ceg.AutoSize = true;
+            this.checkBox_Ceg.Location = new System.Drawing.Point(331, 280);
+            this.checkBox_Ceg.Name = "checkBox_Ceg";
+            this.checkBox_Ceg.Size = new System.Drawing.Size(56, 30);
+            this.checkBox_Ceg.TabIndex = 12;
+            this.checkBox_Ceg.Text = "cég";
+            this.checkBox_Ceg.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -714,10 +716,9 @@
         private System.Windows.Forms.Label label_adoszam;
         private System.Windows.Forms.TextBox textBox_cegtipus;
         private System.Windows.Forms.Label label_cegtipus;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_CegNev;
         private System.Windows.Forms.Label label_Cégnev;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox_Ceg;
         public System.Windows.Forms.ListBox Ügyfelek;
         private System.Windows.Forms.TextBox textBox_Orszag;
         private System.Windows.Forms.Label label_Orszag;
@@ -739,5 +740,6 @@
         private System.Windows.Forms.Label label_lepcsohaz;
         private System.Windows.Forms.TextBox textBox_epulet;
         private System.Windows.Forms.Label label_epulet;
+        private System.Windows.Forms.CheckBox checkBox_Ceg;
     }
 }

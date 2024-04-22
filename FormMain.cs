@@ -29,17 +29,12 @@ namespace Podcast_vizsga
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
            dateTimePicker_szul.Value = DateTime.Now.AddYears(-30);
+
+            tabControl_Ossz.TabPages.Remove(tabPage_ceg);
+            tabControl_Ossz.TabPages.Insert(1,tabPage_ceg);
         }
 
-        private void tabPage_cim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonÚj_Click(object sender, EventArgs e)
 
@@ -74,11 +69,36 @@ namespace Podcast_vizsga
                 textBox_szemSzam.Select();
                 return;
             }
+            
+            if (string.IsNullOrEmpty(textBox_cegtipus.Text))
+            {
+                MessageBox.Show("Nincs megadva Cég tipus!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_cegtipus.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_adoszam.Text))
+            {
+                MessageBox.Show("Nincs megadva Adószám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_adoszam.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_bankszamlaszam.Text))
+            {
+                MessageBox.Show("Nincs megadva Bankszámlaszám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_bankszamlaszam.Select();
+                return;
+            }
+            
+            if (dateTimePicker_szul.Checked == false)
+            {
+                MessageBox.Show("Születési idő megadása kötelező!", "Hiányzó adat!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 MessageBox.Show("Adatok beírása az adatbázisba!", "Sikeres adatbevitel!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
         private void tabPage_szemely_Click(object sender, EventArgs e)
         {
@@ -91,6 +111,15 @@ namespace Podcast_vizsga
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void tabPage_cim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
