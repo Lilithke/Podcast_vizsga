@@ -32,6 +32,7 @@
             this.tabControl_Ossz = new System.Windows.Forms.TabControl();
             this.tabPage_szemely = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_Ceg = new System.Windows.Forms.CheckBox();
             this.dateTimePicker_szul = new System.Windows.Forms.DateTimePicker();
             this.label_szulDate = new System.Windows.Forms.Label();
             this.textBox_szemSzam = new System.Windows.Forms.TextBox();
@@ -81,7 +82,6 @@
             this.textBox_Orszag = new System.Windows.Forms.TextBox();
             this.label_Orszag = new System.Windows.Forms.Label();
             this.Ügyfelek = new System.Windows.Forms.ListBox();
-            this.checkBox_Ceg = new System.Windows.Forms.CheckBox();
             this.tabControl_Ossz.SuspendLayout();
             this.tabPage_szemely.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -117,7 +117,6 @@
             this.tabPage_szemely.Size = new System.Drawing.Size(960, 498);
             this.tabPage_szemely.TabIndex = 0;
             this.tabPage_szemely.Text = "Személy";
-            this.tabPage_szemely.Click += new System.EventHandler(this.tabPage_szemely_Click);
             // 
             // groupBox1
             // 
@@ -145,15 +144,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiválasztott Ügyfél";
             // 
+            // checkBox_Ceg
+            // 
+            this.checkBox_Ceg.AutoSize = true;
+            this.checkBox_Ceg.Location = new System.Drawing.Point(331, 280);
+            this.checkBox_Ceg.Name = "checkBox_Ceg";
+            this.checkBox_Ceg.Size = new System.Drawing.Size(56, 30);
+            this.checkBox_Ceg.TabIndex = 7;
+            this.checkBox_Ceg.Text = "cég";
+            this.checkBox_Ceg.UseVisualStyleBackColor = true;
+            this.checkBox_Ceg.CheckedChanged += new System.EventHandler(this.checkBox_Ceg_CheckedChanged);
+            // 
             // dateTimePicker_szul
             // 
             this.dateTimePicker_szul.Checked = false;
             this.dateTimePicker_szul.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_szul.Location = new System.Drawing.Point(331, 231);
+            this.dateTimePicker_szul.Location = new System.Drawing.Point(331, 223);
             this.dateTimePicker_szul.Name = "dateTimePicker_szul";
             this.dateTimePicker_szul.ShowCheckBox = true;
             this.dateTimePicker_szul.Size = new System.Drawing.Size(204, 30);
-            this.dateTimePicker_szul.TabIndex = 11;
+            this.dateTimePicker_szul.TabIndex = 6;
             // 
             // label_szulDate
             // 
@@ -165,14 +175,13 @@
             this.label_szulDate.Size = new System.Drawing.Size(131, 31);
             this.label_szulDate.TabIndex = 10;
             this.label_szulDate.Text = "Születési dátum";
-            this.label_szulDate.Click += new System.EventHandler(this.label_szulDate_Click);
             // 
             // textBox_szemSzam
             // 
             this.textBox_szemSzam.Location = new System.Drawing.Point(328, 99);
             this.textBox_szemSzam.Name = "textBox_szemSzam";
             this.textBox_szemSzam.Size = new System.Drawing.Size(207, 30);
-            this.textBox_szemSzam.TabIndex = 9;
+            this.textBox_szemSzam.TabIndex = 5;
             // 
             // label_szemSzam
             // 
@@ -190,7 +199,7 @@
             this.textBox_Telefonsz.Location = new System.Drawing.Point(82, 278);
             this.textBox_Telefonsz.Name = "textBox_Telefonsz";
             this.textBox_Telefonsz.Size = new System.Drawing.Size(207, 30);
-            this.textBox_Telefonsz.TabIndex = 7;
+            this.textBox_Telefonsz.TabIndex = 4;
             // 
             // label_Telefon
             // 
@@ -208,7 +217,7 @@
             this.textBox_Jelszo.Location = new System.Drawing.Point(82, 173);
             this.textBox_Jelszo.Name = "textBox_Jelszo";
             this.textBox_Jelszo.Size = new System.Drawing.Size(207, 30);
-            this.textBox_Jelszo.TabIndex = 5;
+            this.textBox_Jelszo.TabIndex = 3;
             // 
             // label_Jelszo
             // 
@@ -226,7 +235,7 @@
             this.textBox_Email.Location = new System.Drawing.Point(82, 100);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(207, 30);
-            this.textBox_Email.TabIndex = 3;
+            this.textBox_Email.TabIndex = 2;
             // 
             // label_Email
             // 
@@ -294,17 +303,17 @@
             // 
             // textBox_bankszamlaszam
             // 
-            this.textBox_bankszamlaszam.Location = new System.Drawing.Point(106, 382);
+            this.textBox_bankszamlaszam.Location = new System.Drawing.Point(126, 354);
             this.textBox_bankszamlaszam.Name = "textBox_bankszamlaszam";
             this.textBox_bankszamlaszam.Size = new System.Drawing.Size(207, 30);
-            this.textBox_bankszamlaszam.TabIndex = 9;
+            this.textBox_bankszamlaszam.TabIndex = 11;
             // 
             // label_bankszamlaszam
             // 
             this.label_bankszamlaszam.AutoSize = true;
             this.label_bankszamlaszam.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_bankszamlaszam.ForeColor = System.Drawing.Color.White;
-            this.label_bankszamlaszam.Location = new System.Drawing.Point(28, 318);
+            this.label_bankszamlaszam.Location = new System.Drawing.Point(32, 290);
             this.label_bankszamlaszam.Name = "label_bankszamlaszam";
             this.label_bankszamlaszam.Size = new System.Drawing.Size(143, 31);
             this.label_bankszamlaszam.TabIndex = 8;
@@ -312,17 +321,17 @@
             // 
             // textBox_adoszam
             // 
-            this.textBox_adoszam.Location = new System.Drawing.Point(106, 264);
+            this.textBox_adoszam.Location = new System.Drawing.Point(126, 236);
             this.textBox_adoszam.Name = "textBox_adoszam";
             this.textBox_adoszam.Size = new System.Drawing.Size(207, 30);
-            this.textBox_adoszam.TabIndex = 7;
+            this.textBox_adoszam.TabIndex = 10;
             // 
             // label_adoszam
             // 
             this.label_adoszam.AutoSize = true;
             this.label_adoszam.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_adoszam.ForeColor = System.Drawing.Color.White;
-            this.label_adoszam.Location = new System.Drawing.Point(17, 231);
+            this.label_adoszam.Location = new System.Drawing.Point(21, 203);
             this.label_adoszam.Name = "label_adoszam";
             this.label_adoszam.Size = new System.Drawing.Size(80, 31);
             this.label_adoszam.TabIndex = 6;
@@ -330,17 +339,17 @@
             // 
             // textBox_cegtipus
             // 
-            this.textBox_cegtipus.Location = new System.Drawing.Point(106, 167);
+            this.textBox_cegtipus.Location = new System.Drawing.Point(126, 139);
             this.textBox_cegtipus.Name = "textBox_cegtipus";
             this.textBox_cegtipus.Size = new System.Drawing.Size(207, 30);
-            this.textBox_cegtipus.TabIndex = 5;
+            this.textBox_cegtipus.TabIndex = 9;
             // 
             // label_cegtipus
             // 
             this.label_cegtipus.AutoSize = true;
             this.label_cegtipus.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_cegtipus.ForeColor = System.Drawing.Color.White;
-            this.label_cegtipus.Location = new System.Drawing.Point(17, 167);
+            this.label_cegtipus.Location = new System.Drawing.Point(21, 139);
             this.label_cegtipus.Name = "label_cegtipus";
             this.label_cegtipus.Size = new System.Drawing.Size(83, 31);
             this.label_cegtipus.TabIndex = 4;
@@ -348,18 +357,17 @@
             // 
             // textBox_CegNev
             // 
-            this.textBox_CegNev.Location = new System.Drawing.Point(106, 105);
+            this.textBox_CegNev.Location = new System.Drawing.Point(126, 77);
             this.textBox_CegNev.Name = "textBox_CegNev";
             this.textBox_CegNev.Size = new System.Drawing.Size(207, 30);
-            this.textBox_CegNev.TabIndex = 3;
-            this.textBox_CegNev.Visible = false;
+            this.textBox_CegNev.TabIndex = 8;
             // 
             // label_Cégnev
             // 
             this.label_Cégnev.AutoSize = true;
             this.label_Cégnev.Font = new System.Drawing.Font("Oswald", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Cégnev.ForeColor = System.Drawing.Color.White;
-            this.label_Cégnev.Location = new System.Drawing.Point(14, 103);
+            this.label_Cégnev.Location = new System.Drawing.Point(18, 75);
             this.label_Cégnev.Name = "label_Cégnev";
             this.label_Cégnev.Size = new System.Drawing.Size(66, 31);
             this.label_Cégnev.TabIndex = 2;
@@ -381,7 +389,6 @@
             this.tabPage_cim.Size = new System.Drawing.Size(960, 498);
             this.tabPage_cim.TabIndex = 2;
             this.tabPage_cim.Text = "Cím";
-            this.tabPage_cim.Click += new System.EventHandler(this.tabPage_cim_Click);
             // 
             // buttonTorles
             // 
@@ -392,7 +399,7 @@
             this.buttonTorles.Location = new System.Drawing.Point(473, 405);
             this.buttonTorles.Name = "buttonTorles";
             this.buttonTorles.Size = new System.Drawing.Size(105, 32);
-            this.buttonTorles.TabIndex = 19;
+            this.buttonTorles.TabIndex = 25;
             this.buttonTorles.Text = "Törlés";
             this.buttonTorles.UseVisualStyleBackColor = false;
             // 
@@ -405,7 +412,7 @@
             this.button_modosit.Location = new System.Drawing.Point(338, 405);
             this.button_modosit.Name = "button_modosit";
             this.button_modosit.Size = new System.Drawing.Size(105, 32);
-            this.button_modosit.TabIndex = 18;
+            this.button_modosit.TabIndex = 24;
             this.button_modosit.Text = "Módosít";
             this.button_modosit.UseVisualStyleBackColor = false;
             // 
@@ -418,7 +425,7 @@
             this.buttonList.Location = new System.Drawing.Point(203, 405);
             this.buttonList.Name = "buttonList";
             this.buttonList.Size = new System.Drawing.Size(105, 32);
-            this.buttonList.TabIndex = 17;
+            this.buttonList.TabIndex = 23;
             this.buttonList.Text = "Listáz";
             this.buttonList.UseVisualStyleBackColor = false;
             // 
@@ -431,7 +438,7 @@
             this.buttonÚj.Location = new System.Drawing.Point(68, 405);
             this.buttonÚj.Name = "buttonÚj";
             this.buttonÚj.Size = new System.Drawing.Size(105, 32);
-            this.buttonÚj.TabIndex = 16;
+            this.buttonÚj.TabIndex = 22;
             this.buttonÚj.Text = "Új";
             this.buttonÚj.UseVisualStyleBackColor = false;
             this.buttonÚj.Click += new System.EventHandler(this.buttonÚj_Click);
@@ -475,7 +482,7 @@
             this.textBox_ajto.Location = new System.Drawing.Point(479, 199);
             this.textBox_ajto.Name = "textBox_ajto";
             this.textBox_ajto.Size = new System.Drawing.Size(64, 30);
-            this.textBox_ajto.TabIndex = 22;
+            this.textBox_ajto.TabIndex = 21;
             // 
             // label_ajto
             // 
@@ -509,7 +516,7 @@
             this.textBox_lepcsohaz.Location = new System.Drawing.Point(479, 95);
             this.textBox_lepcsohaz.Name = "textBox_lepcsohaz";
             this.textBox_lepcsohaz.Size = new System.Drawing.Size(64, 30);
-            this.textBox_lepcsohaz.TabIndex = 18;
+            this.textBox_lepcsohaz.TabIndex = 19;
             // 
             // label_lepcsohaz
             // 
@@ -526,7 +533,7 @@
             this.textBox_epulet.Location = new System.Drawing.Point(479, 43);
             this.textBox_epulet.Name = "textBox_epulet";
             this.textBox_epulet.Size = new System.Drawing.Size(64, 30);
-            this.textBox_epulet.TabIndex = 16;
+            this.textBox_epulet.TabIndex = 18;
             // 
             // label_epulet
             // 
@@ -543,7 +550,7 @@
             this.textBox_hazszam.Location = new System.Drawing.Point(158, 303);
             this.textBox_hazszam.Name = "textBox_hazszam";
             this.textBox_hazszam.Size = new System.Drawing.Size(166, 30);
-            this.textBox_hazszam.TabIndex = 14;
+            this.textBox_hazszam.TabIndex = 17;
             // 
             // label_hazSzam
             // 
@@ -560,7 +567,7 @@
             this.textBox_utcaJellege.Location = new System.Drawing.Point(158, 251);
             this.textBox_utcaJellege.Name = "textBox_utcaJellege";
             this.textBox_utcaJellege.Size = new System.Drawing.Size(166, 30);
-            this.textBox_utcaJellege.TabIndex = 12;
+            this.textBox_utcaJellege.TabIndex = 16;
             // 
             // label_utcaJellege
             // 
@@ -577,7 +584,7 @@
             this.textBox_utca.Location = new System.Drawing.Point(158, 199);
             this.textBox_utca.Name = "textBox_utca";
             this.textBox_utca.Size = new System.Drawing.Size(166, 30);
-            this.textBox_utca.TabIndex = 10;
+            this.textBox_utca.TabIndex = 15;
             // 
             // label_Utca
             // 
@@ -594,7 +601,7 @@
             this.textBox_Varos.Location = new System.Drawing.Point(158, 147);
             this.textBox_Varos.Name = "textBox_Varos";
             this.textBox_Varos.Size = new System.Drawing.Size(166, 30);
-            this.textBox_Varos.TabIndex = 8;
+            this.textBox_Varos.TabIndex = 14;
             // 
             // label1
             // 
@@ -611,7 +618,7 @@
             this.textBox_iranyitoSzam.Location = new System.Drawing.Point(158, 95);
             this.textBox_iranyitoSzam.Name = "textBox_iranyitoSzam";
             this.textBox_iranyitoSzam.Size = new System.Drawing.Size(166, 30);
-            this.textBox_iranyitoSzam.TabIndex = 6;
+            this.textBox_iranyitoSzam.TabIndex = 13;
             // 
             // label_Irány
             // 
@@ -628,7 +635,7 @@
             this.textBox_Orszag.Location = new System.Drawing.Point(158, 43);
             this.textBox_Orszag.Name = "textBox_Orszag";
             this.textBox_Orszag.Size = new System.Drawing.Size(167, 30);
-            this.textBox_Orszag.TabIndex = 4;
+            this.textBox_Orszag.TabIndex = 12;
             // 
             // label_Orszag
             // 
@@ -649,17 +656,7 @@
             this.Ügyfelek.Location = new System.Drawing.Point(607, 12);
             this.Ügyfelek.Name = "Ügyfelek";
             this.Ügyfelek.Size = new System.Drawing.Size(271, 420);
-            this.Ügyfelek.TabIndex = 2;
-            // 
-            // checkBox_Ceg
-            // 
-            this.checkBox_Ceg.AutoSize = true;
-            this.checkBox_Ceg.Location = new System.Drawing.Point(331, 280);
-            this.checkBox_Ceg.Name = "checkBox_Ceg";
-            this.checkBox_Ceg.Size = new System.Drawing.Size(56, 30);
-            this.checkBox_Ceg.TabIndex = 12;
-            this.checkBox_Ceg.Text = "cég";
-            this.checkBox_Ceg.UseVisualStyleBackColor = true;
+            this.Ügyfelek.TabIndex = 26;
             // 
             // FormMain
             // 

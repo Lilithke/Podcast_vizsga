@@ -29,9 +29,11 @@ namespace Podcast_vizsga
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
            dateTimePicker_szul.Value = DateTime.Now.AddYears(-30);
+            dateTimePicker_szul.Checked = false;
 
             tabControl_Ossz.TabPages.Remove(tabPage_ceg);
-            tabControl_Ossz.TabPages.Insert(1,tabPage_ceg);
+            //tabControl_Ossz.TabPages.Insert(1,tabPage_ceg);
+            
         }
 
        
@@ -70,25 +72,103 @@ namespace Podcast_vizsga
                 return;
             }
             
-            if (string.IsNullOrEmpty(textBox_cegtipus.Text))
+
+            if (checkBox_Ceg.Checked == true)
             {
-                MessageBox.Show("Nincs megadva Cég tipus!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox_cegtipus.Select();
+                if (string.IsNullOrEmpty(textBox_CegNev.Text))
+                {
+                    MessageBox.Show("Nincs megadva Cégnév!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_CegNev.Select();
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(textBox_cegtipus.Text))
+                {
+                    MessageBox.Show("Nincs megadva Cég tipus!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_cegtipus.Select();
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBox_adoszam.Text))
+                {
+                    MessageBox.Show("Nincs megadva Adószám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_adoszam.Select();
+                    return;
+                }
+                if (string.IsNullOrEmpty(textBox_bankszamlaszam.Text))
+                {
+                    MessageBox.Show("Nincs megadva Bankszámlaszám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_bankszamlaszam.Select();
+                    return;
+                }
+            }
+
+            if (string.IsNullOrEmpty(textBox_Orszag.Text))
+            {
+                MessageBox.Show("Nincs megadva Ország!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Orszag.Select();
                 return;
             }
-            if (string.IsNullOrEmpty(textBox_adoszam.Text))
+
+            if (string.IsNullOrEmpty(textBox_iranyitoSzam.Text))
             {
-                MessageBox.Show("Nincs megadva Adószám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox_adoszam.Select();
+                MessageBox.Show("Nincs megadva Irányítószám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_iranyitoSzam.Select();
                 return;
             }
-            if (string.IsNullOrEmpty(textBox_bankszamlaszam.Text))
+
+            if (string.IsNullOrEmpty(textBox_Varos.Text))
             {
-                MessageBox.Show("Nincs megadva Bankszámlaszám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox_bankszamlaszam.Select();
+                MessageBox.Show("Nincs megadva Város!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Varos.Select();
                 return;
             }
-            
+
+            if (string.IsNullOrEmpty(textBox_utca.Text))
+            {
+                MessageBox.Show("Nincs megadva utca!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_utca.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBox_utcaJellege.Text))
+            {
+                MessageBox.Show("Nincs megadva utca jellege!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_utcaJellege.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBox_hazszam.Text))
+            {
+                MessageBox.Show("Nincs megadva házszám!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_hazszam.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_epulet.Text))
+            {
+                MessageBox.Show("Nincs megadva Épület!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_epulet.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_lepcsohaz.Text))
+            {
+                MessageBox.Show("Nincs megadva Lépcsőház!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_lepcsohaz.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_Emelet.Text))
+            {
+                MessageBox.Show("Nincs megadva emelet!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Emelet.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_ajto.Text))
+            {
+                MessageBox.Show("Nincs megadva ajtó!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_ajto.Select();
+                return;
+            }
+
+
             if (dateTimePicker_szul.Checked == false)
             {
                 MessageBox.Show("Születési idő megadása kötelező!", "Hiányzó adat!",MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,31 +179,16 @@ namespace Podcast_vizsga
             }
         }
 
-
-        private void tabPage_szemely_Click(object sender, EventArgs e)
+        private void checkBox_Ceg_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (checkBox_Ceg.Checked == true)
+            {
+                tabControl_Ossz.TabPages.Insert(1, tabPage_ceg);
+            }
+            else
+            {
+                tabControl_Ossz.TabPages.Remove(tabPage_ceg);
+            }
         }
-
-        private void label_szulDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void tabPage_cim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
