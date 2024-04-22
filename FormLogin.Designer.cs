@@ -42,7 +42,7 @@
             this.Felhasználónév.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Felhasználónév.Font = new System.Drawing.Font("Oswald", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Felhasználónév.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Felhasználónév.Location = new System.Drawing.Point(398, 200);
+            this.Felhasználónév.Location = new System.Drawing.Point(388, 202);
             this.Felhasználónév.Name = "Felhasználónév";
             this.Felhasználónév.Size = new System.Drawing.Size(191, 48);
             this.Felhasználónév.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // textBox_FelhasznaloNev
             // 
-            this.textBox_FelhasznaloNev.Location = new System.Drawing.Point(409, 265);
+            this.textBox_FelhasznaloNev.Location = new System.Drawing.Point(399, 267);
             this.textBox_FelhasznaloNev.Name = "textBox_FelhasznaloNev";
             this.textBox_FelhasznaloNev.Size = new System.Drawing.Size(168, 22);
             this.textBox_FelhasznaloNev.TabIndex = 1;
@@ -60,7 +60,7 @@
             this.Jelszó.AutoSize = true;
             this.Jelszó.Font = new System.Drawing.Font("Oswald", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Jelszó.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Jelszó.Location = new System.Drawing.Point(458, 302);
+            this.Jelszó.Location = new System.Drawing.Point(448, 304);
             this.Jelszó.Name = "Jelszó";
             this.Jelszó.Size = new System.Drawing.Size(70, 39);
             this.Jelszó.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             // textBox_Jelszo
             // 
-            this.textBox_Jelszo.Location = new System.Drawing.Point(409, 354);
+            this.textBox_Jelszo.Location = new System.Drawing.Point(399, 356);
             this.textBox_Jelszo.Name = "textBox_Jelszo";
             this.textBox_Jelszo.Size = new System.Drawing.Size(168, 22);
             this.textBox_Jelszo.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.Belépés.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Belépés.Font = new System.Drawing.Font("Oswald", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Belépés.ForeColor = System.Drawing.Color.GhostWhite;
-            this.Belépés.Location = new System.Drawing.Point(409, 420);
+            this.Belépés.Location = new System.Drawing.Point(399, 422);
             this.Belépés.Name = "Belépés";
             this.Belépés.Size = new System.Drawing.Size(168, 32);
             this.Belépés.TabIndex = 3;

@@ -15,7 +15,8 @@ namespace Podcast_vizsga
     public partial class FormMain : Form
     {
 
-        HttpClient client = new HttpClient();
+
+        //HttpClient client = new HttpClient();
         public FormMain()
         {
             InitializeComponent();
@@ -41,10 +42,11 @@ namespace Podcast_vizsga
         }
 
         private void buttonÚj_Click(object sender, EventArgs e)
+
         {
             if (string.IsNullOrEmpty(textBox_Nev.Text))
             {
-                MessageBox.Show("Nincs megadva név!","Hiányzó adat!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Nincs megadva név!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox_Nev.Select();
                 return;
             }
@@ -76,7 +78,23 @@ namespace Podcast_vizsga
             {
                 MessageBox.Show("Adatok beírása az adatbázisba!", "Sikeres adatbevitel!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void tabPage_szemely_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label_szulDate_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
