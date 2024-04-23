@@ -6,7 +6,7 @@
 //
 //    var users = Users.FromJson(jsonString);
 
-namespace Podcaststudio_winform_CRUD
+namespace Podcast_vizsga
 {
     using System;
     using System.Collections.Generic;
@@ -93,16 +93,21 @@ namespace Podcaststudio_winform_CRUD
 
         [JsonProperty("updated_at")]
         public DateTimeOffset UpdatedAt { get; set; }
+
+        public override string ToString()
+        {
+            return Nev;
+        }
     }
 
     public partial class Users
     {
-        public static Users FromJson(string json) => JsonConvert.DeserializeObject<Users>(json, Podcaststudio_winform_CRUD.Converter.Settings);
+        public static Users FromJson(string json) => JsonConvert.DeserializeObject<Users>(json, Podcast_vizsga.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Users self) => JsonConvert.SerializeObject(self, Podcaststudio_winform_CRUD.Converter.Settings);
+        public static string ToJson(this Users self) => JsonConvert.SerializeObject(self, Podcast_vizsga.Converter.Settings);
     }
 
     internal static class Converter

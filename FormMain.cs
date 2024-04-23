@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
-using Podcaststudio_winform_CRUD;
+using Podcast_vizsga;
 using System.Configuration;
 using System.Management.Instrumentation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
@@ -22,16 +22,17 @@ namespace Podcast_vizsga
 
 
         HttpClient client = new HttpClient();
-        string endpoint = ReadSetting("endpointUrl");
-        private string jsonString;
+        string endpoint = ReadSetting("http://localhost:8000/api/user");
+        public string jsonString;
 
-        private static string ReadSetting(string keyName)
+       public static string ReadSetting(string endpoint)
         {
             string result = null;
             try
             {
-                var value = ConfigurationSettings.AppSettings;
-                result = value[keyName];
+                var value = endpoint;
+               // var value = ConfigurationManager.AppSettings;
+                result = value;
             }
             catch (ConfigurationException ex)
             {
@@ -47,7 +48,7 @@ namespace Podcast_vizsga
 
        
 
-        private void FormMain_Load(object sender, EventArgs e)
+      public void FormMain_Load(object sender, EventArgs e)
         {
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
@@ -61,22 +62,22 @@ namespace Podcast_vizsga
      
         }
 
-        private async void Listafrissitese()
+       public async void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
             
             try
             {
-        string endpoint = ReadSetting("endpointUrl");
+                string endpoint = ReadSetting("http://localhost:8000/api/user");
                 HttpResponseMessage response = await client.GetAsync(endpoint);
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonstring = await response.Content.ReadAsStringAsync();
                     var users = Users.FromJson(jsonString);
-                    foreach (Users item in users) 
-                    {
-                        Listbox_ugyfelek.Items.Add(item);
-                    }
+                    //foreach (Users item in users)
+                    
+                        Listbox_ugyfelek.Items.Add(users);
+                    
                 }
             }
             catch (Exception ex)
@@ -239,7 +240,7 @@ namespace Podcast_vizsga
             }
         }
 
-        private void buttonList_Click(object sender, EventArgs e)
+      public void buttonList_Click(object sender, EventArgs e)
         {
             Listafrissitese();
         }
