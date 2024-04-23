@@ -4,11 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using Podcaststudio_winform_CRUD;
+using System.Configuration;
+using System.Management.Instrumentation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace Podcast_vizsga
 {
@@ -16,7 +21,25 @@ namespace Podcast_vizsga
     {
 
 
-        //HttpClient client = new HttpClient();
+        HttpClient client = new HttpClient();
+        string endpoint = ReadSetting("endpointUrl");
+        private string jsonString;
+
+        private static string ReadSetting(string keyName)
+        {
+            string result = null;
+            try
+            {
+                var value = ConfigurationSettings.AppSettings;
+                result = value[keyName];
+            }
+            catch (ConfigurationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return result;
+        }
+
         public FormMain()
         {
             InitializeComponent();
@@ -29,14 +52,39 @@ namespace Podcast_vizsga
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
            dateTimePicker_szul.Value = DateTime.Now.AddYears(-30);
-            dateTimePicker_szul.Checked = false;
+           dateTimePicker_szul.Checked = false;
 
-            tabControl_Ossz.TabPages.Remove(tabPage_ceg);
+           tabControl_Ossz.TabPages.Remove(tabPage_ceg);
             //tabControl_Ossz.TabPages.Insert(1,tabPage_ceg);
-            
+
+            Listafrissitese();
+     
         }
 
-       
+        private async void Listafrissitese()
+        {
+            Listbox_ugyfelek.Items.Clear();
+            
+            try
+            {
+        string endpoint = ReadSetting("endpointUrl");
+                HttpResponseMessage response = await client.GetAsync(endpoint);
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonstring = await response.Content.ReadAsStringAsync();
+                    var users = Users.FromJson(jsonString);
+                    foreach (Users item in users) 
+                    {
+                        Listbox_ugyfelek.Items.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void buttonÚj_Click(object sender, EventArgs e)
 
@@ -189,6 +237,11 @@ namespace Podcast_vizsga
             {
                 tabControl_Ossz.TabPages.Remove(tabPage_ceg);
             }
+        }
+
+        private void buttonList_Click(object sender, EventArgs e)
+        {
+            Listafrissitese();
         }
     }
 }

@@ -81,7 +81,7 @@
             this.label_Irány = new System.Windows.Forms.Label();
             this.textBox_Orszag = new System.Windows.Forms.TextBox();
             this.label_Orszag = new System.Windows.Forms.Label();
-            this.Ügyfelek = new System.Windows.Forms.ListBox();
+            this.Listbox_ugyfelek = new System.Windows.Forms.ListBox();
             this.tabControl_Ossz.SuspendLayout();
             this.tabPage_szemely.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -428,6 +428,7 @@
             this.buttonList.TabIndex = 23;
             this.buttonList.Text = "Listáz";
             this.buttonList.UseVisualStyleBackColor = false;
+            this.buttonList.Click += new System.EventHandler(this.buttonList_Click);
             // 
             // buttonÚj
             // 
@@ -467,7 +468,7 @@
             this.groupBox3.Controls.Add(this.label_Irány);
             this.groupBox3.Controls.Add(this.textBox_Orszag);
             this.groupBox3.Controls.Add(this.label_Orszag);
-            this.groupBox3.Controls.Add(this.Ügyfelek);
+            this.groupBox3.Controls.Add(this.Listbox_ugyfelek);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(41, 27);
@@ -647,16 +648,16 @@
             this.label_Orszag.TabIndex = 3;
             this.label_Orszag.Text = "Ország";
             // 
-            // Ügyfelek
+            // Listbox_ugyfelek
             // 
-            this.Ügyfelek.BackColor = System.Drawing.Color.SteelBlue;
-            this.Ügyfelek.ForeColor = System.Drawing.Color.White;
-            this.Ügyfelek.FormattingEnabled = true;
-            this.Ügyfelek.ItemHeight = 26;
-            this.Ügyfelek.Location = new System.Drawing.Point(607, 12);
-            this.Ügyfelek.Name = "Ügyfelek";
-            this.Ügyfelek.Size = new System.Drawing.Size(271, 420);
-            this.Ügyfelek.TabIndex = 26;
+            this.Listbox_ugyfelek.BackColor = System.Drawing.Color.SteelBlue;
+            this.Listbox_ugyfelek.ForeColor = System.Drawing.Color.White;
+            this.Listbox_ugyfelek.FormattingEnabled = true;
+            this.Listbox_ugyfelek.ItemHeight = 26;
+            this.Listbox_ugyfelek.Location = new System.Drawing.Point(607, 12);
+            this.Listbox_ugyfelek.Name = "Listbox_ugyfelek";
+            this.Listbox_ugyfelek.Size = new System.Drawing.Size(271, 420);
+            this.Listbox_ugyfelek.TabIndex = 26;
             // 
             // FormMain
             // 
@@ -716,7 +717,7 @@
         private System.Windows.Forms.TextBox textBox_CegNev;
         private System.Windows.Forms.Label label_Cégnev;
         private System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.ListBox Ügyfelek;
+        public System.Windows.Forms.ListBox Listbox_ugyfelek;
         private System.Windows.Forms.TextBox textBox_Orszag;
         private System.Windows.Forms.Label label_Orszag;
         private System.Windows.Forms.TextBox textBox_iranyitoSzam;
