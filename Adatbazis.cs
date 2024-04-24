@@ -27,19 +27,19 @@ namespace Podcast_vizsga
             sql= conn.CreateCommand();
             try
             {
-             nyit();
+             Nyit();
             }
             catch(MySqlException ex)
             { MessageBox.Show(ex.Message);
               Environment.Exit(0);
             }finally
             {
-             zar();
+             Zar();
             }
             
         }
 
-        private void nyit()
+        private void Nyit()
         {
          if(conn.State!=System.Data.ConnectionState.Open)
             {
@@ -47,7 +47,7 @@ namespace Podcast_vizsga
             }
         }
 
-        private void zar()
+        private void Zar()
         {
             if(conn.State!= System.Data.ConnectionState.Closed)
             {
@@ -55,15 +55,15 @@ namespace Podcast_vizsga
             }
         }
 
-        public List<LocalUsers> GetAllUsers()
+        public List<LocalUser> GetAllUsers()
         {
-            var users = new List<LocalUsers>();
-            //
+            List<LocalUser> userlist = new List<LocalUser>();
+
             sql.CommandText = "SELECT * FROM `users` WHERE 1";
             try
             {
-                nyit();
-                using(MySqlDataReader dr= sql.ExecuteReader())
+                Nyit();
+                using (MySqlDataReader dr = sql.ExecuteReader())
                 {
                     while (dr.Read())
                     {
@@ -89,9 +89,9 @@ namespace Podcast_vizsga
                         string emelet = dr.GetString("emelet");
                         string ajto = dr.GetString("ajto");
 
-                        users.Add(new LocalUser(felhasznaloid, nev, email, jelszo, telefonszam, szemelyi_szam,
-                            szuletesi_datum, ceg, cegnev, ado_szam, bankszamlaszam, orszag, iranyitoszam, varos, utca,
-                            utca_jellege, hazszam, epulet, emelet, ajto));
+                        LocalUser userList = new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,emelet,ajto);
+
+
 
                     }
                 }
@@ -102,9 +102,11 @@ namespace Podcast_vizsga
             }
             finally
             {
-                zar();
+                Zar();
             }
-            return users;
+            return userlist;
+
+
         }
     }
 

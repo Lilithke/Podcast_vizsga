@@ -19,9 +19,10 @@ namespace Podcast_vizsga
 {
     public partial class FormMain : Form
     {
+        //public static Adatbazis db = new Adatbazis();
+        static List<LocalUser> Userlist = new List<LocalUser>();
 
-
-        HttpClient client = new HttpClient();
+        /*HttpClient client = new HttpClient();
         string endpoint = ReadSetting("endpoint");
         public string jsonString;
 
@@ -39,7 +40,7 @@ namespace Podcast_vizsga
                 MessageBox.Show(ex.Message);
             }
             return result;
-        }
+        }*/
 
         public FormMain()
         {
@@ -50,8 +51,8 @@ namespace Podcast_vizsga
 
       public void FormMain_Load(object sender, EventArgs e)
         {
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("4", "4|MdKgA82Hu4XfBkXXTV749dOzzczMS4nYkwgpumafac093d81");
+            //client.DefaultRequestHeaders.Clear();
+            //client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("4", "4|MdKgA82Hu4XfBkXXTV749dOzzczMS4nYkwgpumafac093d81");
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
            dateTimePicker_szul.Value = DateTime.Now.AddYears(-30);
@@ -61,13 +62,21 @@ namespace Podcast_vizsga
             //tabControl_Ossz.TabPages.Insert(1,tabPage_ceg);
 
             Listafrissitese();
+            //olvasas = Adatbazis.Listazas();
      
         }
 
-       public void Listafrissitese()
+       
+
+        public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
-            Listbox_ugyfelek.Items.AddRange(Program.db.GetAllUsers().ToArray());
+            Listbox_ugyfelek.Items.AddRange(Adatbazis.GetAllUsers());
+            foreach (LocalUser userList in Userlist)
+            {
+                Listbox_ugyfelek.Items.Add(userList);
+            }
+            //Listbox_ugyfelek.Items.Add(Adatbazis.GetAllUsers());
             
           /*  try
             {
@@ -92,6 +101,8 @@ namespace Podcast_vizsga
             }*/
             
         }
+
+        
 
         private void buttonÚj_Click(object sender, EventArgs e)
 

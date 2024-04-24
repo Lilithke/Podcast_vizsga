@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,10 @@ namespace Podcast_vizsga
         public static FormMain formMain = null;
         public static string endpoint = "http://localhost:8000/api/user";
         public static Adatbazis db = new Adatbazis();
+        //static List<LocalUser>Userlist = new List<LocalUser>();
+        //static MySqlConnection conn = null;
+        //static MySqlCommand sql = null;
+
 
         static void Main()
         {

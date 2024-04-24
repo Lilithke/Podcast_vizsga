@@ -91,7 +91,7 @@ namespace Podcast_vizsga
 
         public override string ToString()
         {
-            return $"{this.nev} {this.email} {this.jelszo}";
+            return $"{this.nev}";
         }
     }
 
