@@ -71,38 +71,42 @@ namespace Podcast_vizsga
         public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
-            foreach(LocalUser user in Userlist)
+            //Listbox_ugyfelek.Items.AddRange(Program.db.GetAllUsers());
+            var cica =  Program.db.GetAllUsers();
+            foreach ( var user in cica )
             {
                 Listbox_ugyfelek.Items.Add(user);
             }
+
+
             /*foreach (LocalUser userList in UserList)
             {
                 Listbox_ugyfelek.Items.Add(userList);
             }
             //Listbox_ugyfelek.Items.Add(Adatbazis.GetAllUsers());*/
-            
-          /*  try
-            {
-                
-                HttpResponseMessage response = await client.GetAsync(Program.endpoint);
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonstring = await response.Content.ReadAsStringAsync();
-                    var users = Users.FromJson(jsonString);
-                    //foreach (Users item in users)
-                    //{
-                    //    Listbox_ugyfelek.Items.Add(item);
-                    //}
-                        
-                    
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
-            }*/
-            
+            /*  try
+              {
+
+                  HttpResponseMessage response = await client.GetAsync(Program.endpoint);
+                  if (response.IsSuccessStatusCode)
+                  {
+                      string jsonstring = await response.Content.ReadAsStringAsync();
+                      var users = Users.FromJson(jsonString);
+                      //foreach (Users item in users)
+                      //{
+                      //    Listbox_ugyfelek.Items.Add(item);
+                      //}
+
+
+                  }
+              }
+              catch (Exception ex)
+              {
+
+                  MessageBox.Show(ex.Message);
+              }*/
+
         }
 
         
