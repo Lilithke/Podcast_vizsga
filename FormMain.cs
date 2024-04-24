@@ -22,7 +22,7 @@ namespace Podcast_vizsga
 
 
         HttpClient client = new HttpClient();
-        string endpoint = ReadSetting("http://localhost:8000/api/user");
+        string endpoint = ReadSetting("endpoint");
         public string jsonString;
 
        public static string ReadSetting(string endpoint)
@@ -50,6 +50,8 @@ namespace Podcast_vizsga
 
       public void FormMain_Load(object sender, EventArgs e)
         {
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("4", "4|MdKgA82Hu4XfBkXXTV749dOzzczMS4nYkwgpumafac093d81");
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
            dateTimePicker_szul.MaxDate = DateTime.Now.AddYears(-18);
            dateTimePicker_szul.Value = DateTime.Now.AddYears(-30);
@@ -62,21 +64,24 @@ namespace Podcast_vizsga
      
         }
 
-       public async void Listafrissitese()
+       public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
+            Listbox_ugyfelek.Items.AddRange(Program.db.GetAllUsers().ToArray());
             
-            try
+          /*  try
             {
-                string endpoint = ReadSetting("http://localhost:8000/api/user");
-                HttpResponseMessage response = await client.GetAsync(endpoint);
+                
+                HttpResponseMessage response = await client.GetAsync(Program.endpoint);
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonstring = await response.Content.ReadAsStringAsync();
                     var users = Users.FromJson(jsonString);
                     //foreach (Users item in users)
-                    
-                        Listbox_ugyfelek.Items.Add(users);
+                    //{
+                    //    Listbox_ugyfelek.Items.Add(item);
+                    //}
+                        
                     
                 }
             }
@@ -84,7 +89,8 @@ namespace Podcast_vizsga
             {
 
                 MessageBox.Show(ex.Message);
-            }
+            }*/
+            
         }
 
         private void buttonÚj_Click(object sender, EventArgs e)

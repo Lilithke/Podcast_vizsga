@@ -15,7 +15,7 @@ namespace Podcast_vizsga
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Users
+    public partial class LocalUsers
     {
         [JsonProperty("felhasznaloid")]
         public long Felhasznaloid { get; set; }
@@ -34,7 +34,7 @@ namespace Podcast_vizsga
 
         [JsonProperty("szemelyi_szam")]
         [JsonConverter(typeof(ParseStringConverter))]
-        public long SzemelyiSzam { get; set; }
+        public string SzemelyiSzam { get; set; }
 
         [JsonProperty("szuletesi_datum")]
         public DateTimeOffset SzuletesiDatum { get; set; }
@@ -100,14 +100,14 @@ namespace Podcast_vizsga
         }
     }
 
-    public partial class Users
+    public partial class LocalUsers
     {
-        public static Users FromJson(string json) => JsonConvert.DeserializeObject<Users>(json, Podcast_vizsga.Converter.Settings);
+        public static LocalUsers FromJson(string json) => JsonConvert.DeserializeObject<LocalUsers>(json, Podcast_vizsga.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Users self) => JsonConvert.SerializeObject(self, Podcast_vizsga.Converter.Settings);
+        public static string ToJson(this LocalUsers self) => JsonConvert.SerializeObject(self, Podcast_vizsga.Converter.Settings);
     }
 
     internal static class Converter
