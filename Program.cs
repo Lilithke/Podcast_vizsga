@@ -13,18 +13,20 @@ namespace Podcast_vizsga
         public static FormMain formMain = null;
         public static string endpoint = "http://localhost:8000/api/user";
         public static Adatbazis db = new Adatbazis();
-        //static List<LocalUser>Userlist = new List<LocalUser>();
-        //static MySqlConnection conn = null;
-        //static MySqlCommand sql = null;
+        public static List<LocalUser> users = new List<LocalUser>();
+        //static List<LocalUser>Userlist = localUsers;
+       
 
 
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            users = db.GetAllUsers();
             formMain = new FormMain();
             Application.Run(new FormLogin());
-            
+           
+
         }
     }
 }

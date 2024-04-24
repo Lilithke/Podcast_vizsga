@@ -71,12 +71,15 @@ namespace Podcast_vizsga
         public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
-            Listbox_ugyfelek.Items.AddRange(Adatbazis.GetAllUsers());
-            foreach (LocalUser userList in Userlist)
+            foreach(LocalUser user in Userlist)
+            {
+                Listbox_ugyfelek.Items.Add(user);
+            }
+            /*foreach (LocalUser userList in UserList)
             {
                 Listbox_ugyfelek.Items.Add(userList);
             }
-            //Listbox_ugyfelek.Items.Add(Adatbazis.GetAllUsers());
+            //Listbox_ugyfelek.Items.Add(Adatbazis.GetAllUsers());*/
             
           /*  try
             {
@@ -259,6 +262,13 @@ namespace Podcast_vizsga
 
       public void buttonList_Click(object sender, EventArgs e)
         {
+            Listafrissitese();
+        }
+
+        private void Listbox_ugyfelek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
+            //textBox_Nev.Text = localUser.Nev.ToString();
             Listafrissitese();
         }
     }

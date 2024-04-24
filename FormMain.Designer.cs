@@ -658,6 +658,7 @@
             this.Listbox_ugyfelek.Name = "Listbox_ugyfelek";
             this.Listbox_ugyfelek.Size = new System.Drawing.Size(271, 420);
             this.Listbox_ugyfelek.TabIndex = 26;
+            this.Listbox_ugyfelek.SelectedIndexChanged += new System.EventHandler(this.Listbox_ugyfelek_SelectedIndexChanged);
             // 
             // FormMain
             // 

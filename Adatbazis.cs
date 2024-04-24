@@ -57,7 +57,7 @@ namespace Podcast_vizsga
 
         public List<LocalUser> GetAllUsers()
         {
-            List<LocalUser> userlist = new List<LocalUser>();
+            List<LocalUser> users = new List<LocalUser>();
 
             sql.CommandText = "SELECT * FROM `users` WHERE 1";
             try
@@ -89,7 +89,10 @@ namespace Podcast_vizsga
                         string emelet = dr.GetString("emelet");
                         string ajto = dr.GetString("ajto");
 
-                        LocalUser userList = new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,emelet,ajto);
+                        users.Add(new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,
+                            ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,emelet,ajto));
+
+                     
 
 
 
@@ -104,10 +107,12 @@ namespace Podcast_vizsga
             {
                 Zar();
             }
-            return userlist;
+            return users;
 
 
         }
+
+       
     }
 
 

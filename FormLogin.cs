@@ -22,7 +22,7 @@ namespace Podcast_vizsga
 
         }
 
-        private void Belépés_Click(object sender, EventArgs e)
+        public void Belépés_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_FelhasznaloNev.Text))
             {
