@@ -271,9 +271,19 @@ namespace Podcast_vizsga
 
         private void Listbox_ugyfelek_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
-            //textBox_Nev.Text = localUser.Nev.ToString();
-            Listafrissitese();
+            LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
+            textBox_Nev.Text = localUser.Nev.ToString();
+            textBox_Email.Text = localUser.Email.ToString();
+            textBox_Jelszo.Text = localUser.Jelszo.ToString();
+            textBox_Telefonsz.Text = localUser.Telefonszam.ToString();
+            textBox_szemSzam.Text = localUser.Szemelyi_szam.ToString();
+            dateTimePicker_szul.Value = DateTime.Parse(localUser.Szuletesi_datum.ToString());
+            textBox_CegNev.Text = localUser.Cegnev.ToString();
+            textBox_cegtipus.Text=localUser.Ceg_tipus.ToString();
+            
+            
+           
+
         }
     }
 }
