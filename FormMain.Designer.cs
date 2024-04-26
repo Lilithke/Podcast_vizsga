@@ -402,6 +402,7 @@
             this.buttonTorles.TabIndex = 25;
             this.buttonTorles.Text = "Törlés";
             this.buttonTorles.UseVisualStyleBackColor = false;
+            this.buttonTorles.Click += new System.EventHandler(this.buttonTorles_Click);
             // 
             // button_modosit
             // 
@@ -415,6 +416,7 @@
             this.button_modosit.TabIndex = 24;
             this.button_modosit.Text = "Módosít";
             this.button_modosit.UseVisualStyleBackColor = false;
+            this.button_modosit.Click += new System.EventHandler(this.button_modosit_Click);
             // 
             // buttonList
             // 

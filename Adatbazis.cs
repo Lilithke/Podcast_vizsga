@@ -86,11 +86,12 @@ namespace Podcast_vizsga
                         string utca_jellege = dr.GetString("utca_jellege");
                         string hazszam = dr.GetString("hazszam");
                         string epulet = dr.GetString("epulet");
+                        string lepcsohaz = dr.GetString("lepcsohaz");
                         string emelet = dr.GetString("emelet");
                         string ajto = dr.GetString("ajto");
 
-                        users.Add(new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,
-                            ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,emelet,ajto));
+                        //users.Add(new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,
+                            //ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,lepcsohaz,emelet,ajto));
 
                      
 
