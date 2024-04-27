@@ -293,7 +293,7 @@ namespace Podcast_vizsga
         {
             LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
 
-            numericUpDown_id.Value = (long) localUser.Felhasznaloid;
+            numericUpDown_id.Value = (ulong) localUser.Felhasznaloid;
             textBox_Nev.Text = localUser.Nev.ToString();
             textBox_Email.Text = localUser.Email.ToString();
             textBox_Jelszo.Text = localUser.Jelszo.ToString();
@@ -534,13 +534,13 @@ namespace Podcast_vizsga
             }
             else
             {
-                bool v = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK;
+                bool dialog = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK;
 
-            }
+            
 
 
-            if (MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK)
-            {
+            
+            
 
 
                 localUser.Felhasznaloid = (long)numericUpDown_id.Value;
@@ -565,10 +565,11 @@ namespace Podcast_vizsga
                 localUser.Lepcsohaz = textBox_lepcsohaz.Text;
                 localUser.Emelet = textBox_Emelet.Text;
                 localUser.Ajto = textBox_ajto.Text;
+                
 
                 // Delete
 
-                Program.db.DeleteUsers(localUser);
+                Program.db.DeleteUsers((long)numericUpDown_id.Value);
 
                 numericUpDown_id.Value = numericUpDown_id.Minimum;
                 textBox_Nev.Text = string.Empty;
