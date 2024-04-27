@@ -21,7 +21,7 @@ namespace Podcast_vizsga
             builder.Server = "localhost";
             builder.UserID = "root";
             builder.Password = "";
-            builder.Database = "podcaststudio";
+            builder.Database = "podcast";
             builder.CharacterSet = "utf8";
             conn = new MySqlConnection(builder.ConnectionString);
             sql= conn.CreateCommand();
@@ -73,7 +73,7 @@ namespace Podcast_vizsga
                         string jelszo = dr.GetString("jelszo");
                         string telefonszam = dr.GetString("telefonszam");
                         string szemelyi_szam = dr.GetString("szemelyi_szam");
-                        DateTime szuletesi_datum = (DateTime)dr.GetMySqlDateTime("szuletesi_datum");
+                        DateTime szuletesi_datum = dr.GetDateTime("szuletesi_datum");
                         bool ceg = dr.GetBoolean("ceg");
                         string cegnev = dr.GetString("cegnev");
                         string ceg_tipus = dr.GetString("ceg_tipus");
@@ -90,8 +90,8 @@ namespace Podcast_vizsga
                         string emelet = dr.GetString("emelet");
                         string ajto = dr.GetString("ajto");
 
-                        //users.Add(new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,
-                            //ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,lepcsohaz,emelet,ajto));
+                        users.Add(new LocalUser(felhasznaloid,nev,email,jelszo,telefonszam,szemelyi_szam,szuletesi_datum,ceg,cegnev,ceg_tipus,
+                            ado_szam,bankszamlaszam,orszag,iranyitoszam,varos,utca,utca_jellege,hazszam,epulet,lepcsohaz,emelet,ajto));
 
                      
 
@@ -110,10 +110,148 @@ namespace Podcast_vizsga
             }
             return users;
 
+            
+
+        }
+
+        internal void UpdateUsers(LocalUser localUser)
+        {
+           
+
+            try
+            {
+                Nyit();
+                
+
+                sql.CommandText = "UPDATE `users` SET `felhasznaloid`= @felhasznaloid,`nev`= @nev,`email`= @email,`jelszo`= @jelszo,`telefonszam`= @telefonszam,`szemelyi_szam`= @szemelyi_szam,`szuletesi_datum`= @szuletesi_datum,`ceg`= @ceg,`cegnev`= @cegnev,`ceg_tipus`= @ceg_tipus,`ado_szam`= @ado_szam,`bankszamlaszam`= @bankszamlaszam,`orszag`= @orszag,`iranyitoszam`= @iranyitoszam,`varos`= @varos,`utca`= @utca,`utca_jellege`= @utca_jellege,`hazszam`= @hazszam,`epulet`= @epulet,`lepcsohaz`= @lepcsohaz,`emelet`= @emelet,`ajto`= @ajto WHERE `felhasznaloid`= @felhasznaloid";
+                sql.Parameters.Clear();
+                sql.Parameters.AddWithValue("@felhasznaloid",localUser.Felhasznaloid);
+                sql.Parameters.AddWithValue("@nev",localUser.Nev);
+                sql.Parameters.AddWithValue("@email",localUser.Email);
+                sql.Parameters.AddWithValue("@jelszo",localUser.Jelszo);
+                sql.Parameters.AddWithValue("@telefonszam",localUser.Telefonszam);
+                sql.Parameters.AddWithValue("szemelyi_szam",localUser.Szemelyi_szam);
+                sql.Parameters.AddWithValue("@szuletesi_datum",localUser.Szuletesi_datum);
+                sql.Parameters.AddWithValue("@ceg",localUser.Ceg);
+                sql.Parameters.AddWithValue("@cegnev",localUser.Cegnev);
+                sql.Parameters.AddWithValue("@ceg_tipus",localUser.Ceg_tipus);
+                sql.Parameters.AddWithValue("@ado_szam",localUser.Ado_szam);
+                sql.Parameters.AddWithValue("@bankszamlaszam",localUser.Bankszamlaszam);
+                sql.Parameters.AddWithValue("@orszag",localUser.Orszag);
+                sql.Parameters.AddWithValue("@iranyitoszam",localUser.Iranyitoszam);
+                sql.Parameters.AddWithValue("@varos",localUser.Varos);
+                sql.Parameters.AddWithValue("@utca",localUser.Utca);
+                sql.Parameters.AddWithValue("@utca_jellege",localUser.Utca_jellege);
+                sql.Parameters.AddWithValue("@hazszam",localUser.Hazszam);
+                sql.Parameters.AddWithValue("@epulet",localUser.Epulet);
+                sql.Parameters.AddWithValue("@lepcsohaz",localUser.Lepcsohaz);
+                sql.Parameters.AddWithValue("@emelet",localUser.Emelet);
+                sql.Parameters.AddWithValue("@ajto",localUser.Ajto);
+
+                sql.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally { Zar(); }
+
 
         }
 
        
+        internal void NewUsers(LocalUser localUser)
+        {
+            try
+            {
+                Nyit();
+
+                sql.CommandText = "INSERT INTO `users`(`felhasznaloid`, `nev`, `email`, `jelszo`, `telefonszam`, `szemelyi_szam`, `szuletesi_datum`, `ceg`, `cegnev`, `ceg_tipus`, `ado_szam`, `bankszamlaszam`, `orszag`, `iranyitoszam`, `varos`, `utca`, `utca_jellege`, `hazszam`, `epulet`, `lepcsohaz`, `emelet`, `ajto`) " +
+                "VALUES (@felhasznaloid, @nev, @email, @jelszo, @telefonszam , szemelyi_szam , @szuletesi_datum, @ceg, @cegnev, @ceg_tipus , @ado_szam , @bankszamlaszam , @orszag , @iranyitoszam, @varos, @utca, @utca_jellege, @hazszam, @epulet, @lepcsohaz, @emelet, @ajto )";
+                
+                
+                sql.Parameters.Clear();
+                sql.Parameters.AddWithValue("@felhasznaloid", localUser.Felhasznaloid);
+                sql.Parameters.AddWithValue("@nev", localUser.Nev);
+                sql.Parameters.AddWithValue("@email", localUser.Email);
+                sql.Parameters.AddWithValue("@jelszo", localUser.Jelszo);
+                sql.Parameters.AddWithValue("@telefonszam", localUser.Telefonszam);
+                sql.Parameters.AddWithValue("szemelyi_szam", localUser.Szemelyi_szam);
+                sql.Parameters.AddWithValue("@szuletesi_datum", localUser.Szuletesi_datum);
+                sql.Parameters.AddWithValue("@ceg", localUser.Ceg);
+                sql.Parameters.AddWithValue("@cegnev", localUser.Cegnev);
+                sql.Parameters.AddWithValue("@ceg_tipus", localUser.Ceg_tipus);
+                sql.Parameters.AddWithValue("@ado_szam", localUser.Ado_szam);
+                sql.Parameters.AddWithValue("@bankszamlaszam", localUser.Bankszamlaszam);
+                sql.Parameters.AddWithValue("@orszag", localUser.Orszag);
+                sql.Parameters.AddWithValue("@iranyitoszam", localUser.Iranyitoszam);
+                sql.Parameters.AddWithValue("@varos", localUser.Varos);
+                sql.Parameters.AddWithValue("@utca", localUser.Utca);
+                sql.Parameters.AddWithValue("@utca_jellege", localUser.Utca_jellege);
+                sql.Parameters.AddWithValue("@hazszam", localUser.Hazszam);
+                sql.Parameters.AddWithValue("@epulet", localUser.Epulet);
+                sql.Parameters.AddWithValue("@lepcsohaz", localUser.Lepcsohaz);
+                sql.Parameters.AddWithValue("@emelet", localUser.Emelet);
+                sql.Parameters.AddWithValue("@ajto", localUser.Ajto);
+
+
+                sql.ExecuteNonQuery();
+            }
+
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally { Zar(); }
+        }
+
+
+        internal void DeleteUsers(LocalUser localUser)
+        {
+            try
+            {
+                Nyit();
+
+                sql.CommandText = "DELETE FROM `users` WHERE 0";
+
+                
+                sql.Parameters.AddWithValue("@felhasznaloid", localUser.Felhasznaloid);
+                sql.Parameters.AddWithValue("@nev", localUser.Nev);
+                sql.Parameters.AddWithValue("@email", localUser.Email);
+                sql.Parameters.AddWithValue("@jelszo", localUser.Jelszo);
+                sql.Parameters.AddWithValue("@telefonszam", localUser.Telefonszam);
+                sql.Parameters.AddWithValue("szemelyi_szam", localUser.Szemelyi_szam);
+                sql.Parameters.AddWithValue("@szuletesi_datum", localUser.Szuletesi_datum);
+                sql.Parameters.AddWithValue("@ceg", localUser.Ceg);
+                sql.Parameters.AddWithValue("@cegnev", localUser.Cegnev);
+                sql.Parameters.AddWithValue("@ceg_tipus", localUser.Ceg_tipus);
+                sql.Parameters.AddWithValue("@ado_szam", localUser.Ado_szam);
+                sql.Parameters.AddWithValue("@bankszamlaszam", localUser.Bankszamlaszam);
+                sql.Parameters.AddWithValue("@orszag", localUser.Orszag);
+                sql.Parameters.AddWithValue("@iranyitoszam", localUser.Iranyitoszam);
+                sql.Parameters.AddWithValue("@varos", localUser.Varos);
+                sql.Parameters.AddWithValue("@utca", localUser.Utca);
+                sql.Parameters.AddWithValue("@utca_jellege", localUser.Utca_jellege);
+                sql.Parameters.AddWithValue("@hazszam", localUser.Hazszam);
+                sql.Parameters.AddWithValue("@epulet", localUser.Epulet);
+                sql.Parameters.AddWithValue("@lepcsohaz", localUser.Lepcsohaz);
+                sql.Parameters.AddWithValue("@emelet", localUser.Emelet);
+                sql.Parameters.AddWithValue("@ajto", localUser.Ajto);
+                sql.Parameters.Clear();
+
+                sql.ExecuteNonQuery();
+            }
+
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally { Zar(); }
+        }
+
     }
 
 

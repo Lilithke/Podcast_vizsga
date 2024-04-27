@@ -32,6 +32,7 @@
             this.tabControl_Ossz = new System.Windows.Forms.TabControl();
             this.tabPage_szemely = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown_id = new System.Windows.Forms.NumericUpDown();
             this.checkBox_Ceg = new System.Windows.Forms.CheckBox();
             this.dateTimePicker_szul = new System.Windows.Forms.DateTimePicker();
             this.label_szulDate = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             this.tabControl_Ossz.SuspendLayout();
             this.tabPage_szemely.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_id)).BeginInit();
             this.tabPage_ceg.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage_cim.SuspendLayout();
@@ -122,6 +124,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.numericUpDown_id);
             this.groupBox1.Controls.Add(this.checkBox_Ceg);
             this.groupBox1.Controls.Add(this.dateTimePicker_szul);
             this.groupBox1.Controls.Add(this.label_szulDate);
@@ -143,6 +146,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kiválasztott Ügyfél";
+            // 
+            // numericUpDown_id
+            // 
+            this.numericUpDown_id.Location = new System.Drawing.Point(621, 46);
+            this.numericUpDown_id.Name = "numericUpDown_id";
+            this.numericUpDown_id.Size = new System.Drawing.Size(120, 30);
+            this.numericUpDown_id.TabIndex = 11;
             // 
             // checkBox_Ceg
             // 
@@ -677,6 +687,7 @@
             this.tabPage_szemely.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_id)).EndInit();
             this.tabPage_ceg.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -742,5 +753,6 @@
         private System.Windows.Forms.TextBox textBox_epulet;
         private System.Windows.Forms.Label label_epulet;
         private System.Windows.Forms.CheckBox checkBox_Ceg;
+        private System.Windows.Forms.NumericUpDown numericUpDown_id;
     }
 }

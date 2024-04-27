@@ -23,7 +23,7 @@ namespace Podcast_vizsga
      
         //static List<LocalUser> Userlist = new List<LocalUser>();
 
-        HttpClient client = new HttpClient();
+       
 
       
 
@@ -52,42 +52,18 @@ namespace Podcast_vizsga
 
        
 
-        public async void Listafrissitese()
+        public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
 
-            //var cica =  Program.db.GetAllUsers();
-            /*foreach ( var user in cica )
+            var cica =  Program.db.GetAllUsers();
+            foreach ( var user in cica )
             {
                 Listbox_ugyfelek.Items.Add(user);
-            }*/
-
-            /*<--------- 
-             string json = client.GetStringAsync(Program.API_URL + "/test").Result;
-             List<LocalUser> users = JsonConvert.DeserializeObject<List<LocalUser>>(json);
-
-             foreach (var item in users)
-             {
-                 Listbox_ugyfelek.Items.Add(item);
-             }
-             ----------------->*/
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync(Program.API_URL + "/test");
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonString = await response.Content.ReadAsStringAsync();
-                    var localUser = LocalUser.FromJson(jsonString);
-                    foreach (var item in localUser)
-                    {
-                        Listbox_ugyfelek.Items.Add(item);
-                    }
-                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            
+            
 
         }
 
@@ -240,43 +216,37 @@ namespace Podcast_vizsga
             }
             
 
-
+            localUser.Felhasznaloid = (long)numericUpDown_id.Value;
             localUser.Nev = textBox_Nev.Text;
             localUser.Email = textBox_Email.Text;
             localUser.Jelszo = textBox_Jelszo.Text;
             localUser.Telefonszam = textBox_Telefonsz.Text;
-            localUser.SzemelyiSzam = textBox_szemSzam.Text;
-            localUser.SzuletesiDatum = dateTimePicker_szul.Value; //ToString("yyyy-MM-dd")
+            localUser.Szemelyi_szam = textBox_szemSzam.Text;
+            localUser.Szuletesi_datum = dateTimePicker_szul.Value; 
             localUser.Ceg = checkBox_Ceg.Checked;
             localUser.Cegnev = textBox_CegNev.Text;
-            localUser.CegTipus = textBox_cegtipus.Text;
-            localUser.AdoSzam = textBox_adoszam.Text;
+            localUser.Ceg_tipus = textBox_cegtipus.Text;
+            localUser.Ado_szam = textBox_adoszam.Text;
             localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
             localUser.Orszag = textBox_Orszag.Text;
             localUser.Varos = textBox_Varos.Text;
             localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
             localUser.Utca = textBox_utca.Text;
-            localUser.UtcaJellege = textBox_utcaJellege.Text;
+            localUser.Utca_jellege = textBox_utcaJellege.Text;
             localUser.Hazszam = textBox_hazszam.Text;
             localUser.Epulet = textBox_epulet.Text;
             localUser.Lepcsohaz = textBox_lepcsohaz.Text;
             localUser.Emelet = textBox_Emelet.Text;
             localUser.Ajto = textBox_ajto.Text;
 
-            string jsonString = JsonConvert.SerializeObject(localUser);
-            var data = new StringContent(jsonString,Encoding.UTF8, "application/json");
-            var response = client.PostAsync(Program.API_URL + "/register",data).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Sikeres felvétel!");
-                Listafrissitese();
-            }
-            else
-            {
-                MessageBox.Show("Sikertelen felvétel!");
-            }
-            
-       
+
+            //Register
+
+            Program.db.NewUsers(localUser);
+
+            Listafrissitese();
+
+            numericUpDown_id.Value = numericUpDown_id.Minimum;
             textBox_Nev.Text = string.Empty;
             textBox_Email.Text = string.Empty;
             textBox_Jelszo.Text = string.Empty;
@@ -313,7 +283,8 @@ namespace Podcast_vizsga
             }
         }
 
-      public void buttonList_Click(object sender, EventArgs e)
+        //list
+        public void buttonList_Click(object sender, EventArgs e)
         {
             Listafrissitese();
         }
@@ -321,22 +292,24 @@ namespace Podcast_vizsga
         private void Listbox_ugyfelek_SelectedIndexChanged(object sender, EventArgs e)
         {
             LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
+
+            numericUpDown_id.Value = (long) localUser.Felhasznaloid;
             textBox_Nev.Text = localUser.Nev.ToString();
             textBox_Email.Text = localUser.Email.ToString();
             textBox_Jelszo.Text = localUser.Jelszo.ToString();
             textBox_Telefonsz.Text = localUser.Telefonszam.ToString();
-            textBox_szemSzam.Text = localUser.SzemelyiSzam.ToString();
-            dateTimePicker_szul.Value = DateTime.Parse(localUser.SzuletesiDatum.ToString());
+            textBox_szemSzam.Text = localUser.Szemelyi_szam.ToString();
+            dateTimePicker_szul.Value = DateTime.Parse(localUser.Szuletesi_datum.ToString());
             checkBox_Ceg.Checked = localUser.Ceg;
             textBox_CegNev.Text = localUser.Cegnev.ToString();
-            textBox_cegtipus.Text=localUser.CegTipus.ToString();
-            textBox_adoszam.Text = localUser.AdoSzam.ToString();
+            textBox_cegtipus.Text=localUser.Ceg_tipus.ToString();
+            textBox_adoszam.Text = localUser.Ado_szam.ToString();
             textBox_bankszamlaszam.Text = localUser.Bankszamlaszam.ToString();
             textBox_Orszag.Text = localUser.Orszag.ToString();
             textBox_Varos.Text = localUser.Varos.ToString();
             textBox_iranyitoSzam.Text = localUser.Iranyitoszam.ToString();
             textBox_utca.Text = localUser.Utca.ToString();
-            textBox_utcaJellege.Text = localUser.UtcaJellege.ToString();
+            textBox_utcaJellege.Text = localUser.Utca_jellege.ToString();
             textBox_hazszam.Text=localUser.Hazszam.ToString();
             textBox_epulet.Text = localUser.Epulet.ToString();
             textBox_lepcsohaz.Text = localUser.Lepcsohaz.ToString();
@@ -491,44 +464,37 @@ namespace Podcast_vizsga
             }
 
 
-
+            localUser.Felhasznaloid = (long)numericUpDown_id.Value;
             localUser.Nev = textBox_Nev.Text;
             localUser.Email = textBox_Email.Text;
             localUser.Jelszo = textBox_Jelszo.Text;
             localUser.Telefonszam = textBox_Telefonsz.Text;
-            localUser.SzemelyiSzam = textBox_szemSzam.Text;
-            localUser.SzuletesiDatum = dateTimePicker_szul.Value; //ToString("yyyy-MM-dd")
+            localUser.Szemelyi_szam = textBox_szemSzam.Text;
+            localUser.Szuletesi_datum = dateTimePicker_szul.Value; 
             localUser.Ceg = checkBox_Ceg.Checked;
             localUser.Cegnev = textBox_CegNev.Text;
-            localUser.CegTipus = textBox_cegtipus.Text;
-            localUser.AdoSzam = textBox_adoszam.Text;
+            localUser.Ceg_tipus = textBox_cegtipus.Text;
+            localUser.Ado_szam = textBox_adoszam.Text;
             localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
             localUser.Orszag = textBox_Orszag.Text;
             localUser.Varos = textBox_Varos.Text;
             localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
             localUser.Utca = textBox_utca.Text;
-            localUser.UtcaJellege = textBox_utcaJellege.Text;
+            localUser.Utca_jellege = textBox_utcaJellege.Text;
             localUser.Hazszam = textBox_hazszam.Text;
             localUser.Epulet = textBox_epulet.Text;
             localUser.Lepcsohaz = textBox_lepcsohaz.Text;
             localUser.Emelet = textBox_Emelet.Text;
             localUser.Ajto = textBox_ajto.Text;
 
-            string jsonString = JsonConvert.SerializeObject(localUser);
-            var data = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            string endPiontUpdate = $"{Program.API_URL + "/test"}/{localUser.Felhasznaloid}";
-            var response = client.PutAsync(endPiontUpdate, data).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Sikeres módosítás!");
-                Listafrissitese();
-            }
-            else
-            {
-                MessageBox.Show("Sikertelen módosítás!");
-            }
+            //Change
+           
+            
+            Program.db.UpdateUsers(localUser);
 
+            
 
+            numericUpDown_id.Value = numericUpDown_id.Minimum;
             textBox_Nev.Text = string.Empty;
             textBox_Email.Text = string.Empty;
             textBox_Jelszo.Text = string.Empty;
@@ -550,47 +516,61 @@ namespace Podcast_vizsga
             textBox_lepcsohaz.Text = string.Empty;
             textBox_Emelet.Text = string.Empty;
             textBox_ajto.Text = string.Empty;
+
+            Listafrissitese();
+
         }
+
+        
 
         private void buttonTorles_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Valóban törölni szeretné?") ==DialogResult.OK)
+            LocalUser localUser = new LocalUser();
+
+            if ((long)numericUpDown_id.Value == 0)
             {
-                LocalUser localUser = new LocalUser();
-                localUser.Nev=textBox_Nev.Text;
+                MessageBox.Show("Nincs kiválasztott Ügyfél!");
+
+            }
+            else
+            {
+                bool v = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK;
+
+            }
+
+
+            if (MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK)
+            {
+
+
+                localUser.Felhasznaloid = (long)numericUpDown_id.Value;
+                localUser.Nev = textBox_Nev.Text;
                 localUser.Email = textBox_Email.Text;
                 localUser.Jelszo = textBox_Jelszo.Text;
                 localUser.Telefonszam = textBox_Telefonsz.Text;
-                localUser.SzemelyiSzam = textBox_szemSzam.Text;
-                localUser.SzuletesiDatum = dateTimePicker_szul.Value; //ToString("yyyy-MM-dd")
+                localUser.Szemelyi_szam = textBox_szemSzam.Text;
+                localUser.Szuletesi_datum = dateTimePicker_szul.Value;
                 localUser.Ceg = checkBox_Ceg.Checked;
                 localUser.Cegnev = textBox_CegNev.Text;
-                localUser.CegTipus = textBox_cegtipus.Text;
-                localUser.AdoSzam = textBox_adoszam.Text;
+                localUser.Ceg_tipus = textBox_cegtipus.Text;
+                localUser.Ado_szam = textBox_adoszam.Text;
                 localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
                 localUser.Orszag = textBox_Orszag.Text;
                 localUser.Varos = textBox_Varos.Text;
                 localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
                 localUser.Utca = textBox_utca.Text;
-                localUser.UtcaJellege = textBox_utcaJellege.Text;
+                localUser.Utca_jellege = textBox_utcaJellege.Text;
                 localUser.Hazszam = textBox_hazszam.Text;
                 localUser.Epulet = textBox_epulet.Text;
                 localUser.Lepcsohaz = textBox_lepcsohaz.Text;
                 localUser.Emelet = textBox_Emelet.Text;
                 localUser.Ajto = textBox_ajto.Text;
 
-                string endPointDelete = $"{Program.API_URL + "/test"}/{localUser.Felhasznaloid}";
-                var response = client.DeleteAsync(endPointDelete).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    MessageBox.Show("Sikeres Törlés!");
-                    Listafrissitese();
-                }
-                else
-                {
-                    MessageBox.Show("Sikertelen Törlés!");
-                }
+                // Delete
 
+                Program.db.DeleteUsers(localUser);
+
+                numericUpDown_id.Value = numericUpDown_id.Minimum;
                 textBox_Nev.Text = string.Empty;
                 textBox_Email.Text = string.Empty;
                 textBox_Jelszo.Text = string.Empty;
@@ -612,6 +592,8 @@ namespace Podcast_vizsga
                 textBox_lepcsohaz.Text = string.Empty;
                 textBox_Emelet.Text = string.Empty;
                 textBox_ajto.Text = string.Empty;
+
+                Listafrissitese();
             }
         }
     }
