@@ -572,10 +572,7 @@ namespace Podcast_vizsga
 
 
                 }
-                else
-                {
-                    Environment.Exit(0);
-                }
+                
             }
         }
 
