@@ -538,7 +538,7 @@ namespace Podcast_vizsga
 
         private void buttonTorles_Click(object sender, EventArgs e)
         {
-            
+
 
             if ((long)numericUpDown_id.Value == 0)
             {
@@ -547,28 +547,35 @@ namespace Podcast_vizsga
             }
             else
             {
-                bool dialog = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.OK;
+                bool dialog = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.Yes;
+                
+           
 
-            
+                if(dialog == true) {
 
-                // Delete
+                    // Delete
 
-                Program.db.DeleteUsers((long)numericUpDown_id.Value);
+                    Program.db.DeleteUsers((long)numericUpDown_id.Value);
 
-                Listafrissitese();
+                    Listafrissitese();
+    
+                    Szovegmezo();
 
-                Szovegmezo();
+                    if (numericUpDown_id.Value != 0)
+                    {
+                        MessageBox.Show("Az ügyfél törlése sikertelen!");
+                    }
+                    else
+                    {
+                    MessageBox.Show("Az ügyfél törlése sikeres!");
+                    }
 
-                if (numericUpDown_id.Value != 0)
-                {
-                    MessageBox.Show("Az ügyfél törlése sikertelen!");
+
                 }
                 else
                 {
-                    MessageBox.Show("Az ügyfél törlése sikeres!");
+                    Environment.Exit(0);
                 }
-
-               
             }
         }
 
