@@ -113,10 +113,10 @@
             this.tabPage_szemely.Controls.Add(this.groupBox1);
             this.tabPage_szemely.Font = new System.Drawing.Font("Oswald", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabPage_szemely.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage_szemely.Location = new System.Drawing.Point(4, 35);
+            this.tabPage_szemely.Location = new System.Drawing.Point(4, 29);
             this.tabPage_szemely.Name = "tabPage_szemely";
             this.tabPage_szemely.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_szemely.Size = new System.Drawing.Size(960, 498);
+            this.tabPage_szemely.Size = new System.Drawing.Size(960, 504);
             this.tabPage_szemely.TabIndex = 0;
             this.tabPage_szemely.Text = "Személy";
             // 
@@ -151,15 +151,16 @@
             // 
             this.numericUpDown_id.Location = new System.Drawing.Point(621, 46);
             this.numericUpDown_id.Name = "numericUpDown_id";
-            this.numericUpDown_id.Size = new System.Drawing.Size(120, 30);
+            this.numericUpDown_id.Size = new System.Drawing.Size(120, 28);
             this.numericUpDown_id.TabIndex = 11;
+            this.numericUpDown_id.Visible = false;
             // 
             // checkBox_Ceg
             // 
             this.checkBox_Ceg.AutoSize = true;
             this.checkBox_Ceg.Location = new System.Drawing.Point(331, 280);
             this.checkBox_Ceg.Name = "checkBox_Ceg";
-            this.checkBox_Ceg.Size = new System.Drawing.Size(56, 30);
+            this.checkBox_Ceg.Size = new System.Drawing.Size(52, 24);
             this.checkBox_Ceg.TabIndex = 7;
             this.checkBox_Ceg.Text = "cég";
             this.checkBox_Ceg.UseVisualStyleBackColor = true;
@@ -172,7 +173,7 @@
             this.dateTimePicker_szul.Location = new System.Drawing.Point(331, 223);
             this.dateTimePicker_szul.Name = "dateTimePicker_szul";
             this.dateTimePicker_szul.ShowCheckBox = true;
-            this.dateTimePicker_szul.Size = new System.Drawing.Size(204, 30);
+            this.dateTimePicker_szul.Size = new System.Drawing.Size(204, 28);
             this.dateTimePicker_szul.TabIndex = 6;
             // 
             // label_szulDate
@@ -182,7 +183,7 @@
             this.label_szulDate.ForeColor = System.Drawing.Color.White;
             this.label_szulDate.Location = new System.Drawing.Point(325, 170);
             this.label_szulDate.Name = "label_szulDate";
-            this.label_szulDate.Size = new System.Drawing.Size(131, 31);
+            this.label_szulDate.Size = new System.Drawing.Size(127, 25);
             this.label_szulDate.TabIndex = 10;
             this.label_szulDate.Text = "Születési dátum";
             // 
@@ -190,7 +191,7 @@
             // 
             this.textBox_szemSzam.Location = new System.Drawing.Point(328, 99);
             this.textBox_szemSzam.Name = "textBox_szemSzam";
-            this.textBox_szemSzam.Size = new System.Drawing.Size(207, 30);
+            this.textBox_szemSzam.Size = new System.Drawing.Size(207, 28);
             this.textBox_szemSzam.TabIndex = 5;
             // 
             // label_szemSzam
@@ -200,7 +201,7 @@
             this.label_szemSzam.ForeColor = System.Drawing.Color.White;
             this.label_szemSzam.Location = new System.Drawing.Point(314, 39);
             this.label_szemSzam.Name = "label_szemSzam";
-            this.label_szemSzam.Size = new System.Drawing.Size(121, 31);
+            this.label_szemSzam.Size = new System.Drawing.Size(116, 25);
             this.label_szemSzam.TabIndex = 8;
             this.label_szemSzam.Text = "Személyi szám";
             // 
@@ -208,7 +209,7 @@
             // 
             this.textBox_Telefonsz.Location = new System.Drawing.Point(82, 278);
             this.textBox_Telefonsz.Name = "textBox_Telefonsz";
-            this.textBox_Telefonsz.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Telefonsz.Size = new System.Drawing.Size(207, 28);
             this.textBox_Telefonsz.TabIndex = 4;
             // 
             // label_Telefon
@@ -218,7 +219,7 @@
             this.label_Telefon.ForeColor = System.Drawing.Color.White;
             this.label_Telefon.Location = new System.Drawing.Point(17, 231);
             this.label_Telefon.Name = "label_Telefon";
-            this.label_Telefon.Size = new System.Drawing.Size(105, 31);
+            this.label_Telefon.Size = new System.Drawing.Size(102, 25);
             this.label_Telefon.TabIndex = 6;
             this.label_Telefon.Text = "Telefonszám";
             // 
@@ -226,7 +227,7 @@
             // 
             this.textBox_Jelszo.Location = new System.Drawing.Point(82, 173);
             this.textBox_Jelszo.Name = "textBox_Jelszo";
-            this.textBox_Jelszo.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Jelszo.Size = new System.Drawing.Size(207, 28);
             this.textBox_Jelszo.TabIndex = 3;
             // 
             // label_Jelszo
@@ -236,7 +237,7 @@
             this.label_Jelszo.ForeColor = System.Drawing.Color.White;
             this.label_Jelszo.Location = new System.Drawing.Point(17, 167);
             this.label_Jelszo.Name = "label_Jelszo";
-            this.label_Jelszo.Size = new System.Drawing.Size(57, 31);
+            this.label_Jelszo.Size = new System.Drawing.Size(55, 25);
             this.label_Jelszo.TabIndex = 4;
             this.label_Jelszo.Text = "Jelszó";
             // 
@@ -244,7 +245,7 @@
             // 
             this.textBox_Email.Location = new System.Drawing.Point(82, 100);
             this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Email.Size = new System.Drawing.Size(207, 28);
             this.textBox_Email.TabIndex = 2;
             // 
             // label_Email
@@ -254,7 +255,7 @@
             this.label_Email.ForeColor = System.Drawing.Color.White;
             this.label_Email.Location = new System.Drawing.Point(14, 103);
             this.label_Email.Name = "label_Email";
-            this.label_Email.Size = new System.Drawing.Size(55, 31);
+            this.label_Email.Size = new System.Drawing.Size(52, 25);
             this.label_Email.TabIndex = 2;
             this.label_Email.Text = "Email";
             // 
@@ -262,7 +263,7 @@
             // 
             this.textBox_Nev.Location = new System.Drawing.Point(82, 39);
             this.textBox_Nev.Name = "textBox_Nev";
-            this.textBox_Nev.Size = new System.Drawing.Size(207, 30);
+            this.textBox_Nev.Size = new System.Drawing.Size(207, 28);
             this.textBox_Nev.TabIndex = 1;
             // 
             // label_Nev
@@ -272,7 +273,7 @@
             this.label_Nev.ForeColor = System.Drawing.Color.White;
             this.label_Nev.Location = new System.Drawing.Point(17, 39);
             this.label_Nev.Name = "label_Nev";
-            this.label_Nev.Size = new System.Drawing.Size(40, 31);
+            this.label_Nev.Size = new System.Drawing.Size(38, 25);
             this.label_Nev.TabIndex = 0;
             this.label_Nev.Text = "Név";
             // 
@@ -283,10 +284,10 @@
             this.tabPage_ceg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage_ceg.Controls.Add(this.groupBox2);
             this.tabPage_ceg.ForeColor = System.Drawing.Color.SteelBlue;
-            this.tabPage_ceg.Location = new System.Drawing.Point(4, 35);
+            this.tabPage_ceg.Location = new System.Drawing.Point(4, 29);
             this.tabPage_ceg.Name = "tabPage_ceg";
             this.tabPage_ceg.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_ceg.Size = new System.Drawing.Size(960, 498);
+            this.tabPage_ceg.Size = new System.Drawing.Size(960, 504);
             this.tabPage_ceg.TabIndex = 1;
             this.tabPage_ceg.Text = "Cég";
             // 
@@ -315,7 +316,7 @@
             // 
             this.textBox_bankszamlaszam.Location = new System.Drawing.Point(126, 354);
             this.textBox_bankszamlaszam.Name = "textBox_bankszamlaszam";
-            this.textBox_bankszamlaszam.Size = new System.Drawing.Size(207, 30);
+            this.textBox_bankszamlaszam.Size = new System.Drawing.Size(207, 28);
             this.textBox_bankszamlaszam.TabIndex = 11;
             // 
             // label_bankszamlaszam
@@ -325,7 +326,7 @@
             this.label_bankszamlaszam.ForeColor = System.Drawing.Color.White;
             this.label_bankszamlaszam.Location = new System.Drawing.Point(32, 290);
             this.label_bankszamlaszam.Name = "label_bankszamlaszam";
-            this.label_bankszamlaszam.Size = new System.Drawing.Size(143, 31);
+            this.label_bankszamlaszam.Size = new System.Drawing.Size(139, 25);
             this.label_bankszamlaszam.TabIndex = 8;
             this.label_bankszamlaszam.Text = "Bankszámlaszám";
             // 
@@ -333,7 +334,7 @@
             // 
             this.textBox_adoszam.Location = new System.Drawing.Point(126, 236);
             this.textBox_adoszam.Name = "textBox_adoszam";
-            this.textBox_adoszam.Size = new System.Drawing.Size(207, 30);
+            this.textBox_adoszam.Size = new System.Drawing.Size(207, 28);
             this.textBox_adoszam.TabIndex = 10;
             // 
             // label_adoszam
@@ -343,7 +344,7 @@
             this.label_adoszam.ForeColor = System.Drawing.Color.White;
             this.label_adoszam.Location = new System.Drawing.Point(21, 203);
             this.label_adoszam.Name = "label_adoszam";
-            this.label_adoszam.Size = new System.Drawing.Size(80, 31);
+            this.label_adoszam.Size = new System.Drawing.Size(77, 25);
             this.label_adoszam.TabIndex = 6;
             this.label_adoszam.Text = "Adószám";
             // 
@@ -351,7 +352,7 @@
             // 
             this.textBox_cegtipus.Location = new System.Drawing.Point(126, 139);
             this.textBox_cegtipus.Name = "textBox_cegtipus";
-            this.textBox_cegtipus.Size = new System.Drawing.Size(207, 30);
+            this.textBox_cegtipus.Size = new System.Drawing.Size(207, 28);
             this.textBox_cegtipus.TabIndex = 9;
             // 
             // label_cegtipus
@@ -361,7 +362,7 @@
             this.label_cegtipus.ForeColor = System.Drawing.Color.White;
             this.label_cegtipus.Location = new System.Drawing.Point(21, 139);
             this.label_cegtipus.Name = "label_cegtipus";
-            this.label_cegtipus.Size = new System.Drawing.Size(83, 31);
+            this.label_cegtipus.Size = new System.Drawing.Size(80, 25);
             this.label_cegtipus.TabIndex = 4;
             this.label_cegtipus.Text = "Cég tipus";
             // 
@@ -369,7 +370,7 @@
             // 
             this.textBox_CegNev.Location = new System.Drawing.Point(126, 77);
             this.textBox_CegNev.Name = "textBox_CegNev";
-            this.textBox_CegNev.Size = new System.Drawing.Size(207, 30);
+            this.textBox_CegNev.Size = new System.Drawing.Size(207, 28);
             this.textBox_CegNev.TabIndex = 8;
             // 
             // label_Cégnev
@@ -379,7 +380,7 @@
             this.label_Cégnev.ForeColor = System.Drawing.Color.White;
             this.label_Cégnev.Location = new System.Drawing.Point(18, 75);
             this.label_Cégnev.Name = "label_Cégnev";
-            this.label_Cégnev.Size = new System.Drawing.Size(66, 31);
+            this.label_Cégnev.Size = new System.Drawing.Size(64, 25);
             this.label_Cégnev.TabIndex = 2;
             this.label_Cégnev.Text = "Cégnév";
             // 
@@ -393,10 +394,10 @@
             this.tabPage_cim.Controls.Add(this.buttonList);
             this.tabPage_cim.Controls.Add(this.buttonÚj);
             this.tabPage_cim.Controls.Add(this.groupBox3);
-            this.tabPage_cim.Location = new System.Drawing.Point(4, 35);
+            this.tabPage_cim.Location = new System.Drawing.Point(4, 29);
             this.tabPage_cim.Name = "tabPage_cim";
             this.tabPage_cim.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_cim.Size = new System.Drawing.Size(960, 498);
+            this.tabPage_cim.Size = new System.Drawing.Size(960, 504);
             this.tabPage_cim.TabIndex = 2;
             this.tabPage_cim.Text = "Cím";
             // 
@@ -494,7 +495,7 @@
             // 
             this.textBox_ajto.Location = new System.Drawing.Point(479, 199);
             this.textBox_ajto.Name = "textBox_ajto";
-            this.textBox_ajto.Size = new System.Drawing.Size(64, 30);
+            this.textBox_ajto.Size = new System.Drawing.Size(64, 28);
             this.textBox_ajto.TabIndex = 21;
             // 
             // label_ajto
@@ -503,7 +504,7 @@
             this.label_ajto.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_ajto.Location = new System.Drawing.Point(351, 200);
             this.label_ajto.Name = "label_ajto";
-            this.label_ajto.Size = new System.Drawing.Size(41, 29);
+            this.label_ajto.Size = new System.Drawing.Size(38, 24);
             this.label_ajto.TabIndex = 21;
             this.label_ajto.Text = "Ajtó";
             // 
@@ -511,7 +512,7 @@
             // 
             this.textBox_Emelet.Location = new System.Drawing.Point(479, 147);
             this.textBox_Emelet.Name = "textBox_Emelet";
-            this.textBox_Emelet.Size = new System.Drawing.Size(64, 30);
+            this.textBox_Emelet.Size = new System.Drawing.Size(64, 28);
             this.textBox_Emelet.TabIndex = 20;
             // 
             // label_Emelet
@@ -520,7 +521,7 @@
             this.label_Emelet.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Emelet.Location = new System.Drawing.Point(351, 148);
             this.label_Emelet.Name = "label_Emelet";
-            this.label_Emelet.Size = new System.Drawing.Size(61, 29);
+            this.label_Emelet.Size = new System.Drawing.Size(58, 24);
             this.label_Emelet.TabIndex = 19;
             this.label_Emelet.Text = "Emelet";
             // 
@@ -528,7 +529,7 @@
             // 
             this.textBox_lepcsohaz.Location = new System.Drawing.Point(479, 95);
             this.textBox_lepcsohaz.Name = "textBox_lepcsohaz";
-            this.textBox_lepcsohaz.Size = new System.Drawing.Size(64, 30);
+            this.textBox_lepcsohaz.Size = new System.Drawing.Size(64, 28);
             this.textBox_lepcsohaz.TabIndex = 19;
             // 
             // label_lepcsohaz
@@ -537,7 +538,7 @@
             this.label_lepcsohaz.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_lepcsohaz.Location = new System.Drawing.Point(351, 96);
             this.label_lepcsohaz.Name = "label_lepcsohaz";
-            this.label_lepcsohaz.Size = new System.Drawing.Size(85, 29);
+            this.label_lepcsohaz.Size = new System.Drawing.Size(81, 24);
             this.label_lepcsohaz.TabIndex = 17;
             this.label_lepcsohaz.Text = "Lépcsőház";
             // 
@@ -545,7 +546,7 @@
             // 
             this.textBox_epulet.Location = new System.Drawing.Point(479, 43);
             this.textBox_epulet.Name = "textBox_epulet";
-            this.textBox_epulet.Size = new System.Drawing.Size(64, 30);
+            this.textBox_epulet.Size = new System.Drawing.Size(64, 28);
             this.textBox_epulet.TabIndex = 18;
             // 
             // label_epulet
@@ -554,7 +555,7 @@
             this.label_epulet.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_epulet.Location = new System.Drawing.Point(351, 44);
             this.label_epulet.Name = "label_epulet";
-            this.label_epulet.Size = new System.Drawing.Size(58, 29);
+            this.label_epulet.Size = new System.Drawing.Size(55, 24);
             this.label_epulet.TabIndex = 15;
             this.label_epulet.Text = "Épület";
             // 
@@ -562,7 +563,7 @@
             // 
             this.textBox_hazszam.Location = new System.Drawing.Point(158, 303);
             this.textBox_hazszam.Name = "textBox_hazszam";
-            this.textBox_hazszam.Size = new System.Drawing.Size(166, 30);
+            this.textBox_hazszam.Size = new System.Drawing.Size(166, 28);
             this.textBox_hazszam.TabIndex = 17;
             // 
             // label_hazSzam
@@ -571,7 +572,7 @@
             this.label_hazSzam.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_hazSzam.Location = new System.Drawing.Point(30, 304);
             this.label_hazSzam.Name = "label_hazSzam";
-            this.label_hazSzam.Size = new System.Drawing.Size(73, 29);
+            this.label_hazSzam.Size = new System.Drawing.Size(70, 24);
             this.label_hazSzam.TabIndex = 13;
             this.label_hazSzam.Text = "Házszám";
             // 
@@ -579,7 +580,7 @@
             // 
             this.textBox_utcaJellege.Location = new System.Drawing.Point(158, 251);
             this.textBox_utcaJellege.Name = "textBox_utcaJellege";
-            this.textBox_utcaJellege.Size = new System.Drawing.Size(166, 30);
+            this.textBox_utcaJellege.Size = new System.Drawing.Size(166, 28);
             this.textBox_utcaJellege.TabIndex = 16;
             // 
             // label_utcaJellege
@@ -588,7 +589,7 @@
             this.label_utcaJellege.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_utcaJellege.Location = new System.Drawing.Point(30, 252);
             this.label_utcaJellege.Name = "label_utcaJellege";
-            this.label_utcaJellege.Size = new System.Drawing.Size(97, 29);
+            this.label_utcaJellege.Size = new System.Drawing.Size(93, 24);
             this.label_utcaJellege.TabIndex = 11;
             this.label_utcaJellege.Text = "Utca jellege";
             // 
@@ -596,7 +597,7 @@
             // 
             this.textBox_utca.Location = new System.Drawing.Point(158, 199);
             this.textBox_utca.Name = "textBox_utca";
-            this.textBox_utca.Size = new System.Drawing.Size(166, 30);
+            this.textBox_utca.Size = new System.Drawing.Size(166, 28);
             this.textBox_utca.TabIndex = 15;
             // 
             // label_Utca
@@ -605,7 +606,7 @@
             this.label_Utca.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Utca.Location = new System.Drawing.Point(30, 200);
             this.label_Utca.Name = "label_Utca";
-            this.label_Utca.Size = new System.Drawing.Size(45, 29);
+            this.label_Utca.Size = new System.Drawing.Size(42, 24);
             this.label_Utca.TabIndex = 9;
             this.label_Utca.Text = "Utca";
             // 
@@ -613,7 +614,7 @@
             // 
             this.textBox_Varos.Location = new System.Drawing.Point(158, 147);
             this.textBox_Varos.Name = "textBox_Varos";
-            this.textBox_Varos.Size = new System.Drawing.Size(166, 30);
+            this.textBox_Varos.Size = new System.Drawing.Size(166, 28);
             this.textBox_Varos.TabIndex = 14;
             // 
             // label1
@@ -622,7 +623,7 @@
             this.label1.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(30, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 29);
+            this.label1.Size = new System.Drawing.Size(48, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "Város";
             // 
@@ -630,7 +631,7 @@
             // 
             this.textBox_iranyitoSzam.Location = new System.Drawing.Point(158, 95);
             this.textBox_iranyitoSzam.Name = "textBox_iranyitoSzam";
-            this.textBox_iranyitoSzam.Size = new System.Drawing.Size(166, 30);
+            this.textBox_iranyitoSzam.Size = new System.Drawing.Size(166, 28);
             this.textBox_iranyitoSzam.TabIndex = 13;
             // 
             // label_Irány
@@ -639,7 +640,7 @@
             this.label_Irány.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Irány.Location = new System.Drawing.Point(30, 96);
             this.label_Irány.Name = "label_Irány";
-            this.label_Irány.Size = new System.Drawing.Size(104, 29);
+            this.label_Irány.Size = new System.Drawing.Size(100, 24);
             this.label_Irány.TabIndex = 5;
             this.label_Irány.Text = "Irányítószám";
             // 
@@ -647,7 +648,7 @@
             // 
             this.textBox_Orszag.Location = new System.Drawing.Point(158, 43);
             this.textBox_Orszag.Name = "textBox_Orszag";
-            this.textBox_Orszag.Size = new System.Drawing.Size(167, 30);
+            this.textBox_Orszag.Size = new System.Drawing.Size(167, 28);
             this.textBox_Orszag.TabIndex = 12;
             // 
             // label_Orszag
@@ -656,7 +657,7 @@
             this.label_Orszag.Font = new System.Drawing.Font("Oswald", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_Orszag.Location = new System.Drawing.Point(30, 44);
             this.label_Orszag.Name = "label_Orszag";
-            this.label_Orszag.Size = new System.Drawing.Size(61, 29);
+            this.label_Orszag.Size = new System.Drawing.Size(56, 24);
             this.label_Orszag.TabIndex = 3;
             this.label_Orszag.Text = "Ország";
             // 
@@ -665,10 +666,10 @@
             this.Listbox_ugyfelek.BackColor = System.Drawing.Color.SteelBlue;
             this.Listbox_ugyfelek.ForeColor = System.Drawing.Color.White;
             this.Listbox_ugyfelek.FormattingEnabled = true;
-            this.Listbox_ugyfelek.ItemHeight = 26;
+            this.Listbox_ugyfelek.ItemHeight = 20;
             this.Listbox_ugyfelek.Location = new System.Drawing.Point(607, 12);
             this.Listbox_ugyfelek.Name = "Listbox_ugyfelek";
-            this.Listbox_ugyfelek.Size = new System.Drawing.Size(271, 420);
+            this.Listbox_ugyfelek.Size = new System.Drawing.Size(271, 404);
             this.Listbox_ugyfelek.TabIndex = 26;
             this.Listbox_ugyfelek.SelectedIndexChanged += new System.EventHandler(this.Listbox_ugyfelek_SelectedIndexChanged);
             // 

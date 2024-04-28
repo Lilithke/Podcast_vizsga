@@ -15,17 +15,14 @@ using System.Configuration;
 using System.Management.Instrumentation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using Newtonsoft.Json;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Podcast_vizsga
 {
     public partial class FormMain : Form
     {
      
-        //static List<LocalUser> Userlist = new List<LocalUser>();
-
        
-
-      
 
         public FormMain()
         {
@@ -34,7 +31,7 @@ namespace Podcast_vizsga
 
        
 
-      public void FormMain_Load(object sender, EventArgs e)
+        public void FormMain_Load(object sender, EventArgs e)
         {
             
            dateTimePicker_szul.MinDate = DateTime.Now.AddYears(-120);
@@ -50,20 +47,43 @@ namespace Podcast_vizsga
      
         }
 
-       
+        private void Szovegmezo()
+        {
+            numericUpDown_id.Value = numericUpDown_id.Minimum;
+            textBox_Nev.Text = string.Empty;
+            textBox_Email.Text = string.Empty;
+            textBox_Jelszo.Text = string.Empty;
+            textBox_Telefonsz.Text = string.Empty;
+            textBox_szemSzam.Text = string.Empty;
+            dateTimePicker_szul.Checked = false;
+            checkBox_Ceg.Checked = false;
+            textBox_CegNev.Text = string.Empty;
+            textBox_cegtipus.Text = string.Empty;
+            textBox_adoszam.Text = string.Empty;
+            textBox_bankszamlaszam.Text = string.Empty;
+            textBox_Orszag.Text = string.Empty;
+            textBox_Varos.Text = string.Empty;
+            textBox_iranyitoSzam.Text = string.Empty;
+            textBox_utca.Text = string.Empty;
+            textBox_utcaJellege.Text = string.Empty;
+            textBox_hazszam.Text = string.Empty;
+            textBox_epulet.Text = string.Empty;
+            textBox_lepcsohaz.Text = string.Empty;
+            textBox_Emelet.Text = string.Empty;
+            textBox_ajto.Text = string.Empty;
+        }
+
+
 
         public void Listafrissitese()
         {
             Listbox_ugyfelek.Items.Clear();
 
-            var cica =  Program.db.GetAllUsers();
-            foreach ( var user in cica )
+            var sor =  Program.db.GetAllUsers();
+            foreach ( var user in sor )
             {
                 Listbox_ugyfelek.Items.Add(user);
             }
-
-            
-            
 
         }
 
@@ -73,7 +93,7 @@ namespace Podcast_vizsga
 
         {
             LocalUser localUser = new LocalUser();
-            
+
             if (string.IsNullOrEmpty(textBox_Nev.Text))
             {
                 MessageBox.Show("Nincs megadva név!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,6 +116,12 @@ namespace Podcast_vizsga
             {
                 MessageBox.Show("Nincs megadva Jelszó!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox_Jelszo.Select();
+                return;
+            }
+            if (textBox_Jelszo.Text.Length < 8)
+            {
+                MessageBox.Show("A jelszó legalább 8 karakterű legyen!");
+                textBox_Nev.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(textBox_Telefonsz.Text))
@@ -214,30 +240,34 @@ namespace Podcast_vizsga
                 dateTimePicker_szul.Select();
                 return;
             }
+
+
+            
+                localUser.Felhasznaloid = (long)numericUpDown_id.Value;
+                localUser.Nev = textBox_Nev.Text;
+                localUser.Email = textBox_Email.Text;
+                localUser.Jelszo = textBox_Jelszo.Text;
+                localUser.Telefonszam = textBox_Telefonsz.Text;
+                localUser.Szemelyi_szam = textBox_szemSzam.Text;
+                localUser.Szuletesi_datum = dateTimePicker_szul.Value;
+                localUser.Ceg = checkBox_Ceg.Checked;
+                localUser.Cegnev = textBox_CegNev.Text;
+                localUser.Ceg_tipus = textBox_cegtipus.Text;
+                localUser.Ado_szam = textBox_adoszam.Text;
+                localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
+                localUser.Orszag = textBox_Orszag.Text;
+                localUser.Varos = textBox_Varos.Text;
+                localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
+                localUser.Utca = textBox_utca.Text;
+                localUser.Utca_jellege = textBox_utcaJellege.Text;
+                localUser.Hazszam = textBox_hazszam.Text;
+                localUser.Epulet = textBox_epulet.Text;
+                localUser.Lepcsohaz = textBox_lepcsohaz.Text;
+                localUser.Emelet = textBox_Emelet.Text;
+                localUser.Ajto = textBox_ajto.Text;
             
 
-            localUser.Felhasznaloid = (long)numericUpDown_id.Value;
-            localUser.Nev = textBox_Nev.Text;
-            localUser.Email = textBox_Email.Text;
-            localUser.Jelszo = textBox_Jelszo.Text;
-            localUser.Telefonszam = textBox_Telefonsz.Text;
-            localUser.Szemelyi_szam = textBox_szemSzam.Text;
-            localUser.Szuletesi_datum = dateTimePicker_szul.Value; 
-            localUser.Ceg = checkBox_Ceg.Checked;
-            localUser.Cegnev = textBox_CegNev.Text;
-            localUser.Ceg_tipus = textBox_cegtipus.Text;
-            localUser.Ado_szam = textBox_adoszam.Text;
-            localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
-            localUser.Orszag = textBox_Orszag.Text;
-            localUser.Varos = textBox_Varos.Text;
-            localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
-            localUser.Utca = textBox_utca.Text;
-            localUser.Utca_jellege = textBox_utcaJellege.Text;
-            localUser.Hazszam = textBox_hazszam.Text;
-            localUser.Epulet = textBox_epulet.Text;
-            localUser.Lepcsohaz = textBox_lepcsohaz.Text;
-            localUser.Emelet = textBox_Emelet.Text;
-            localUser.Ajto = textBox_ajto.Text;
+            
 
 
             //Register
@@ -246,28 +276,18 @@ namespace Podcast_vizsga
 
             Listafrissitese();
 
-            numericUpDown_id.Value = numericUpDown_id.Minimum;
-            textBox_Nev.Text = string.Empty;
-            textBox_Email.Text = string.Empty;
-            textBox_Jelszo.Text = string.Empty;
-            textBox_Telefonsz.Text = string.Empty;
-            textBox_szemSzam.Text = string.Empty;
-            dateTimePicker_szul.Checked = false;
-            checkBox_Ceg.Checked = false;
-            textBox_CegNev.Text = string.Empty;
-            textBox_cegtipus.Text = string.Empty;
-            textBox_adoszam.Text = string.Empty;
-            textBox_bankszamlaszam.Text = string.Empty;
-            textBox_Orszag.Text = string.Empty;
-            textBox_Varos.Text = string.Empty;
-            textBox_iranyitoSzam.Text = string.Empty;
-            textBox_utca.Text = string.Empty;
-            textBox_utcaJellege.Text = string.Empty;
-            textBox_hazszam.Text = string.Empty;
-            textBox_epulet.Text = string.Empty;
-            textBox_lepcsohaz.Text = string.Empty;
-            textBox_Emelet.Text = string.Empty;
-            textBox_ajto.Text = string.Empty;
+            if (numericUpDown_id.Value != 0)
+            {
+                MessageBox.Show("Az új ügyfél felvétele sikertelen!");
+            }
+            else
+            {
+                MessageBox.Show("Az új ügyfél felvétele sikeres!");
+            }
+
+
+            Szovegmezo();
+            
 
         }
 
@@ -292,6 +312,7 @@ namespace Podcast_vizsga
         private void Listbox_ugyfelek_SelectedIndexChanged(object sender, EventArgs e)
         {
             LocalUser localUser = (LocalUser) Listbox_ugyfelek.SelectedItem;
+
 
             numericUpDown_id.Value = (ulong) localUser.Felhasznaloid;
             textBox_Nev.Text = localUser.Nev.ToString();
@@ -319,7 +340,7 @@ namespace Podcast_vizsga
     
         }
 
-        private void button_modosit_Click(object sender, EventArgs e)
+        public void button_modosit_Click(object sender, EventArgs e)
         {
             LocalUser localUser = new LocalUser();
 
@@ -344,6 +365,12 @@ namespace Podcast_vizsga
             {
                 MessageBox.Show("Nincs megadva Jelszó!", "Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox_Jelszo.Select();
+                return;
+            }
+            if (textBox_Jelszo.Text.Length < 8)
+            {
+                MessageBox.Show("A jelszó legalább 8 karakterű legyen!");
+                textBox_Nev.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(textBox_Telefonsz.Text))
@@ -463,7 +490,7 @@ namespace Podcast_vizsga
                 return;
             }
 
-
+            
             localUser.Felhasznaloid = (long)numericUpDown_id.Value;
             localUser.Nev = textBox_Nev.Text;
             localUser.Email = textBox_Email.Text;
@@ -486,46 +513,32 @@ namespace Podcast_vizsga
             localUser.Lepcsohaz = textBox_lepcsohaz.Text;
             localUser.Emelet = textBox_Emelet.Text;
             localUser.Ajto = textBox_ajto.Text;
+            
 
             //Change
-           
             
+
             Program.db.UpdateUsers(localUser);
-
-            
-
-            numericUpDown_id.Value = numericUpDown_id.Minimum;
-            textBox_Nev.Text = string.Empty;
-            textBox_Email.Text = string.Empty;
-            textBox_Jelszo.Text = string.Empty;
-            textBox_Telefonsz.Text = string.Empty;
-            textBox_szemSzam.Text = string.Empty;
-            dateTimePicker_szul.Checked = false;
-            checkBox_Ceg.Checked = false;
-            textBox_CegNev.Text = string.Empty;
-            textBox_cegtipus.Text = string.Empty;
-            textBox_adoszam.Text = string.Empty;
-            textBox_bankszamlaszam.Text = string.Empty;
-            textBox_Orszag.Text = string.Empty;
-            textBox_Varos.Text = string.Empty;
-            textBox_iranyitoSzam.Text = string.Empty;
-            textBox_utca.Text = string.Empty;
-            textBox_utcaJellege.Text = string.Empty;
-            textBox_hazszam.Text = string.Empty;
-            textBox_epulet.Text = string.Empty;
-            textBox_lepcsohaz.Text = string.Empty;
-            textBox_Emelet.Text = string.Empty;
-            textBox_ajto.Text = string.Empty;
 
             Listafrissitese();
 
+            //Message
+
+            if (localUser.Nev.GetType() == typeof(string))
+            {
+                MessageBox.Show("Módosítás sikeres!");
+            }
+            else { MessageBox.Show("Módosítás sikertelen!"); }
+
+           
+
         }
 
-        
+
 
         private void buttonTorles_Click(object sender, EventArgs e)
         {
-            LocalUser localUser = new LocalUser();
+            
 
             if ((long)numericUpDown_id.Value == 0)
             {
@@ -538,64 +551,27 @@ namespace Podcast_vizsga
 
             
 
-
-            
-            
-
-
-                localUser.Felhasznaloid = (long)numericUpDown_id.Value;
-                localUser.Nev = textBox_Nev.Text;
-                localUser.Email = textBox_Email.Text;
-                localUser.Jelszo = textBox_Jelszo.Text;
-                localUser.Telefonszam = textBox_Telefonsz.Text;
-                localUser.Szemelyi_szam = textBox_szemSzam.Text;
-                localUser.Szuletesi_datum = dateTimePicker_szul.Value;
-                localUser.Ceg = checkBox_Ceg.Checked;
-                localUser.Cegnev = textBox_CegNev.Text;
-                localUser.Ceg_tipus = textBox_cegtipus.Text;
-                localUser.Ado_szam = textBox_adoszam.Text;
-                localUser.Bankszamlaszam = textBox_bankszamlaszam.Text;
-                localUser.Orszag = textBox_Orszag.Text;
-                localUser.Varos = textBox_Varos.Text;
-                localUser.Iranyitoszam = textBox_iranyitoSzam.Text;
-                localUser.Utca = textBox_utca.Text;
-                localUser.Utca_jellege = textBox_utcaJellege.Text;
-                localUser.Hazszam = textBox_hazszam.Text;
-                localUser.Epulet = textBox_epulet.Text;
-                localUser.Lepcsohaz = textBox_lepcsohaz.Text;
-                localUser.Emelet = textBox_Emelet.Text;
-                localUser.Ajto = textBox_ajto.Text;
-                
-
                 // Delete
 
                 Program.db.DeleteUsers((long)numericUpDown_id.Value);
 
-                numericUpDown_id.Value = numericUpDown_id.Minimum;
-                textBox_Nev.Text = string.Empty;
-                textBox_Email.Text = string.Empty;
-                textBox_Jelszo.Text = string.Empty;
-                textBox_Telefonsz.Text = string.Empty;
-                textBox_szemSzam.Text = string.Empty;
-                dateTimePicker_szul.Checked = false;
-                checkBox_Ceg.Checked = false;
-                textBox_CegNev.Text = string.Empty;
-                textBox_cegtipus.Text = string.Empty;
-                textBox_adoszam.Text = string.Empty;
-                textBox_bankszamlaszam.Text = string.Empty;
-                textBox_Orszag.Text = string.Empty;
-                textBox_Varos.Text = string.Empty;
-                textBox_iranyitoSzam.Text = string.Empty;
-                textBox_utca.Text = string.Empty;
-                textBox_utcaJellege.Text = string.Empty;
-                textBox_hazszam.Text = string.Empty;
-                textBox_epulet.Text = string.Empty;
-                textBox_lepcsohaz.Text = string.Empty;
-                textBox_Emelet.Text = string.Empty;
-                textBox_ajto.Text = string.Empty;
-
                 Listafrissitese();
+
+                Szovegmezo();
+
+                if (numericUpDown_id.Value != 0)
+                {
+                    MessageBox.Show("Az ügyfél törlése sikertelen!");
+                }
+                else
+                {
+                    MessageBox.Show("Az ügyfél törlése sikeres!");
+                }
+
+               
             }
         }
+
+       
     }
 }

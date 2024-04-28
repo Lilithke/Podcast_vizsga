@@ -170,7 +170,7 @@ namespace Podcast_vizsga
                 Nyit();
 
                 sql.CommandText = "INSERT INTO `users`(`felhasznaloid`, `nev`, `email`, `jelszo`, `telefonszam`, `szemelyi_szam`, `szuletesi_datum`, `ceg`, `cegnev`, `ceg_tipus`, `ado_szam`, `bankszamlaszam`, `orszag`, `iranyitoszam`, `varos`, `utca`, `utca_jellege`, `hazszam`, `epulet`, `lepcsohaz`, `emelet`, `ajto`) " +
-                "VALUES (@felhasznaloid, @nev, @email, @jelszo, @telefonszam , szemelyi_szam , @szuletesi_datum, @ceg, @cegnev, @ceg_tipus , @ado_szam , @bankszamlaszam , @orszag , @iranyitoszam, @varos, @utca, @utca_jellege, @hazszam, @epulet, @lepcsohaz, @emelet, @ajto )";
+                "VALUES (@felhasznaloid, @nev, @email, @jelszo, @telefonszam , @szemelyi_szam , @szuletesi_datum, @ceg, @cegnev, @ceg_tipus , @ado_szam , @bankszamlaszam , @orszag , @iranyitoszam, @varos, @utca, @utca_jellege, @hazszam, @epulet, @lepcsohaz, @emelet, @ajto )";
 
 
                 sql.Parameters.Clear();

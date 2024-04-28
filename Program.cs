@@ -11,10 +11,9 @@ namespace Podcast_vizsga
     internal static class Program
     {
         public static FormMain formMain = null;
-        public const string API_URL = "http://localhost:8000/api";
+        //public const string API_URL = "http://localhost:8000/api";
         public static Adatbazis db = new Adatbazis();
         public static List<LocalUser> users = new List<LocalUser>();
-        //static List<LocalUser>Userlist = localUsers;
        
 
 
