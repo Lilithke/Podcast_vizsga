@@ -577,8 +577,12 @@ namespace Podcast_vizsga
                 MessageBox.Show("Nincs kiválasztott Ügyfél!");
 
             }
-            else MessageBox.Show("Valóban törölni szeretné?", "Kérdés", MessageBoxButtons.OK);
-            {     /// Biztonsági kérdés a felhasznlónak
+
+            if (numericUpDown_id.Value != 0) 
+            {
+                //MessageBox.Show("Az ügyfél törlése sikeres!");
+                // MessageBox.Show("Valóban törölni szeretné?", "Kérdés", MessageBoxButtons.YesNo);
+                /// Biztonsági kérdés a felhasznlónak
 
 
                 Program.db.DeleteUsers((long)numericUpDown_id.Value);
@@ -587,16 +591,17 @@ namespace Podcast_vizsga
 
                 Szovegmezo();
 
-                if (numericUpDown_id.Value != 0)
-                {
-                    MessageBox.Show("Az ügyfél törlése sikertelen!");
-                }
-                else
-                {
-                    MessageBox.Show("Az ügyfél törlése sikeres!");
-                }
+                
+                
+                 MessageBox.Show("Az ügyfél törlése sikeres!");
+                
+                
 
 
+            }
+            else
+            {
+                MessageBox.Show("Az ügyfél törlése sikertelen!");
             }
 
         }
