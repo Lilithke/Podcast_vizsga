@@ -16,13 +16,26 @@ using System.Management.Instrumentation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using Newtonsoft.Json;
 using System.Diagnostics.Eventing.Reader;
+using Org.BouncyCastle.Asn1.X509;
+using System.Runtime.Remoting.Messaging;
+using Mysqlx;
+using Google.Protobuf.Reflection;
+using MySqlX.XDevAPI.Common;
 
 namespace Podcast_vizsga
 {
     public partial class FormMain : Form
     {
-     
-       
+        /// <summary>
+        /// 
+        /// Környezet
+        /// 
+        /// *Visual Studio 2022
+        /// Target framework: .NET Framework 4.7.2
+        /// *Xampp Control v.3.3.0
+
+        /// </summary>
+
 
         public FormMain()
         {
@@ -73,7 +86,9 @@ namespace Podcast_vizsga
             textBox_ajto.Text = string.Empty;
         }
 
-
+        /// <summary>
+        /// A lista folyamtos MySql frissitése
+        /// </summary>
 
         public void Listafrissitese()
         {
@@ -87,6 +102,9 @@ namespace Podcast_vizsga
 
         }
 
+        /// <summary>
+        /// Új ügyfél felvitele adatbázisba az új gombbal
+        /// </summary>
         
 
         private void buttonÚj_Click(object sender, EventArgs e)
@@ -100,7 +118,7 @@ namespace Podcast_vizsga
                 textBox_Nev.Select();
                 return;
             }
-            if (textBox_Nev.Text.Length<3)
+            if (textBox_Nev.Text.Length<3)                              ///A név minimum 3 karakteres megadása
             {
                 MessageBox.Show("Névmegadása kötelező!");
                 textBox_Nev.Focus();
@@ -118,7 +136,7 @@ namespace Podcast_vizsga
                 textBox_Jelszo.Select();
                 return;
             }
-            if (textBox_Jelszo.Text.Length < 8)
+            if (textBox_Jelszo.Text.Length < 8)                                  ///A jelszónak minimum 8 karakteres megadása
             {
                 MessageBox.Show("A jelszó legalább 8 karakterű legyen!");
                 textBox_Nev.Focus();
@@ -291,6 +309,8 @@ namespace Podcast_vizsga
 
         }
 
+       
+
         private void checkBox_Ceg_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Ceg.Checked == true)
@@ -308,6 +328,11 @@ namespace Podcast_vizsga
         {
             Listafrissitese();
         }
+
+       /// <summary>
+       /// A lista folyamatos frissítése, amint ügyfelet váltunk és az adott ügyfél adatainak kiíratása
+       /// </summary>
+       
 
         private void Listbox_ugyfelek_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -340,6 +365,10 @@ namespace Podcast_vizsga
     
         }
 
+        /// <summary>
+        /// Az ügyfelek adatainak módósítása az adatbázisban a modosítás gombbal
+        /// </summary>
+       
         public void button_modosit_Click(object sender, EventArgs e)
         {
             LocalUser localUser = new LocalUser();
@@ -349,7 +378,7 @@ namespace Podcast_vizsga
                 MessageBox.Show("Nincs kiválasztott ügyfél!");
             }
 
-            if (textBox_Nev.Text.Length < 3)
+            if (textBox_Nev.Text.Length < 3)                         ///A név minimum 3 karakteres megadása
             {
                 MessageBox.Show("Névmegadása kötelező!","Hiányzó adat!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox_Nev.Focus();
@@ -367,7 +396,7 @@ namespace Podcast_vizsga
                 textBox_Jelszo.Select();
                 return;
             }
-            if (textBox_Jelszo.Text.Length < 8)
+            if (textBox_Jelszo.Text.Length < 8)                                         ///A jelszónak minimum 8 karakteres megadása
             {
                 MessageBox.Show("A jelszó legalább 8 karakterű legyen!");
                 textBox_Nev.Focus();
@@ -387,7 +416,7 @@ namespace Podcast_vizsga
             }
 
 
-            if (checkBox_Ceg.Checked == true)
+            if (checkBox_Ceg.Checked == true)           /// Ha ki van pipálva a cég checkbox, akkor jelenik meg a cég fül
             {
                 if (string.IsNullOrEmpty(textBox_CegNev.Text))
                 {
@@ -534,8 +563,11 @@ namespace Podcast_vizsga
 
         }
 
+        /// <summary>
+        /// Az ügyfél adatainak teljes törlése az adatbázisból
+        /// </summary>
 
-
+        // Delete
         private void buttonTorles_Click(object sender, EventArgs e)
         {
 
@@ -545,37 +577,40 @@ namespace Podcast_vizsga
                 MessageBox.Show("Nincs kiválasztott Ügyfél!");
 
             }
-            else
-            {
-                bool dialog = MessageBox.Show("Valóban törölni szeretné?") == DialogResult.Yes;
-                
-           
-
-                if(dialog == true) {
-
-                    // Delete
-
-                    Program.db.DeleteUsers((long)numericUpDown_id.Value);
-
-                    Listafrissitese();
-    
-                    Szovegmezo();
-
-                    if (numericUpDown_id.Value != 0)
-                    {
-                        MessageBox.Show("Az ügyfél törlése sikertelen!");
-                    }
-                    else
-                    {
-                    MessageBox.Show("Az ügyfél törlése sikeres!");
-                    }
+            else MessageBox.Show("Valóban törölni szeretné?", "Kérdés", MessageBoxButtons.OK);
+            {     /// Biztonsági kérdés a felhasznlónak
 
 
+                Program.db.DeleteUsers((long)numericUpDown_id.Value);
+
+                Listafrissitese();
+
+                Szovegmezo();
+
+                if (numericUpDown_id.Value != 0)
+                {
+                    MessageBox.Show("Az ügyfél törlése sikertelen!");
                 }
-                
+                else
+                {
+                    MessageBox.Show("Az ügyfél törlése sikeres!");
+                }
+
+
             }
+
         }
 
-       
+        /// Fejlesztési lehetőségek:
+        /// Az adatbázis további tábláinak adatainak feldolgozása a fülek bővítésével.
+        /// Igény szerinti újraindulás.
+
     }
+
 }
+
+        
+
+
+    
+
