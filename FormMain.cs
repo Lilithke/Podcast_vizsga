@@ -99,7 +99,7 @@ namespace Podcast_vizsga
             {
                 Listbox_ugyfelek.Items.Add(user);
             }
-
+           
         }
 
         /// <summary>
@@ -574,16 +574,13 @@ namespace Podcast_vizsga
 
             if ((long)numericUpDown_id.Value == 0)
             {
-                MessageBox.Show("Nincs kiválasztott Ügyfél!");
+                MessageBox.Show("Nincs kiválasztott Ügyfél!", "!", MessageBoxButtons.OK) ;     /// Biztonsági kérdés a felhasznlónak
 
             }
 
             if (numericUpDown_id.Value != 0) 
             {
-                //MessageBox.Show("Az ügyfél törlése sikeres!");
-                // MessageBox.Show("Valóban törölni szeretné?", "Kérdés", MessageBoxButtons.YesNo);
-                /// Biztonsági kérdés a felhasznlónak
-
+                
 
                 Program.db.DeleteUsers((long)numericUpDown_id.Value);
 
