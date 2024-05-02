@@ -139,7 +139,6 @@
     <None Include="Dokumentacio\Manualis teszt\Manuális tesztelési jegyzőkönyv.pdf" />
     <None Include="Dokumentacio\Prezentacio\PresentationEN.pdf" />
     <None Include="Dokumentacio\Prezentacio\Presentation_MAGYAR.pdf" />
-    <None Include="Dokumentacio\Prezentacio\Vizsgamunka leírás.pdf" />
     <None Include="Dokumentacio\Read me\Fejlesztői_Telepitesiutmutato.pdf" />
     <None Include="packages.config" />
     <None Include="Podcaststudio_setup.msi" />
